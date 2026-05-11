@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dulpcmuctcp34"]
+
+[ext_resource type="PackedScene" uid="uid://cd2o76iiapxoh" path="res://scenes/weapons/weapon_base.tscn" id="1_1b33f"]
+[ext_resource type="Texture2D" uid="uid://bbw1axlomamnl" path="res://assets/sprites/Weapons/Melee/Weapon_axe.png" id="2_xq71v"]
+[ext_resource type="Script" uid="uid://cty1714hpvofx" path="res://scenes/weapons/melee/weapon_rot.gd" id="3_8qyoe"]
+[ext_resource type="PackedScene" uid="uid://b7cb8mcoavmdq" path="res://scenes/unit/component/hitbox_component.tscn" id="3_t2mr8"]
+[ext_resource type="Script" uid="uid://dt61sk02ql0fn" path="res://scenes/weapons/melee/melee_behavior.gd" id="4_t2mr8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xq71v"]
+size = Vector2(70, 36)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8qyoe"]
+radius = 150.0
+
+[node name="WeaponAxe" unique_id=1005391561 instance=ExtResource("1_1b33f")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1684804287]
+position = Vector2(20, 0)
+texture = ExtResource("2_xq71v")
+script = ExtResource("3_8qyoe")
+
+[node name="HitboxComponent" parent="Sprite2D" index="0" unique_id=1617562035 instance=ExtResource("3_t2mr8")]
+collision_layer = 16
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/HitboxComponent" index="0" unique_id=628470277]
+z_index = 1
+position = Vector2(33, 14)
+shape = SubResource("RectangleShape2D_xq71v")
+debug_color = Color(0.7019608, 0.07058824, 0, 0.43137255)
+
+[node name="CollisionShape2D" parent="RangeArea" parent_id_path=PackedInt32Array(21629844) index="0" unique_id=1219185106]
+shape = SubResource("CircleShape2D_8qyoe")
+debug_color = Color(0, 0.6, 0.7019608, 0.41960785)
+
+[node name="WeaponBehavior" parent="." index="3" unique_id=1527988521 node_paths=PackedStringArray("hitbox", "weapon")]
+script = ExtResource("4_t2mr8")
+hitbox = NodePath("../Sprite2D/HitboxComponent")
+weapon = NodePath("..")
+
+[connection signal="area_entered" from="RangeArea" to="." method="_on_range_area_area_entered"]
+[connection signal="area_exited" from="RangeArea" to="." method="_on_range_area_area_exited"]

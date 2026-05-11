@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="UnitStats" format=3 uid="uid://ccgam483hnua4"]
+
+[ext_resource type="Texture2D" uid="uid://c6vplmpl4q4jr" path="res://assets/sprites/Enemies/Enemy_3.png" id="1_37jj3"]
+[ext_resource type="Script" uid="uid://b4up7xfbnckq3" path="res://resource/units/unit_stats.gd" id="2_6m6hj"]
+
+[resource]
+script = ExtResource("2_6m6hj")
+name = "enemy_fast"
+type = 1
+icon = ExtResource("1_37jj3")
+health = 8
+health_increase_per_wave = 2.5
+damage = 1.5
+speed = 350.0
+luck = 0.0
+block_chance = 5.0
+gold_drop = 2
+metadata/_custom_type_script = "uid://b4up7xfbnckq3"

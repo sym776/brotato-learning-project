@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d0mpmywg71wpe"]
+
+[ext_resource type="PackedScene" uid="uid://c44lolphsakbl" path="res://scenes/projectiles/projectile_base.tscn" id="1_mk2uf"]
+[ext_resource type="Texture2D" uid="uid://cmr4xxqrthts7" path="res://assets/sprites/Projectiles/Projectile_1.png" id="2_kgo5h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgo5h"]
+size = Vector2(64, 53)
+
+[node name="ProjectileLaser" unique_id=984406740 instance=ExtResource("1_mk2uf")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=791742807]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_kgo5h")
+
+[node name="HitboxComponent" parent="Sprite2D" index="0" unique_id=1617562035]
+collision_layer = 16
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/HitboxComponent" index="0" unique_id=486018502]
+position = Vector2(6, -1.5)
+shape = SubResource("RectangleShape2D_kgo5h")

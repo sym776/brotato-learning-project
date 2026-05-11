@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c44lolphsakbl"]
+
+[ext_resource type="Script" uid="uid://b6le3g1oulv0g" path="res://scenes/projectiles/projectile_base.gd" id="1_pq2jy"]
+[ext_resource type="PackedScene" uid="uid://b7cb8mcoavmdq" path="res://scenes/unit/component/hitbox_component.tscn" id="2_bnthw"]
+
+[node name="ProjectileBase" type="Node2D" unique_id=984406740 node_paths=PackedStringArray("hitbox")]
+script = ExtResource("1_pq2jy")
+hitbox = NodePath("Sprite2D/HitboxComponent")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=791742807]
+
+[node name="HitboxComponent" parent="Sprite2D" unique_id=1617562035 instance=ExtResource("2_bnthw")]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1895300500]
+
+[connection signal="on_hit_hurtbox" from="Sprite2D/HitboxComponent" to="." method="_on_hitbox_component_on_hit_hurtbox"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

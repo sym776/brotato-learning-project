@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://26kx4rgj1iu3"]
+
+[ext_resource type="PackedScene" uid="uid://bmrgfs2j8nl7j" path="res://scenes/unit/players/player.tscn" id="1_lpoi3"]
+[ext_resource type="Resource" uid="uid://b6bxrkwdq2tun" path="res://resource/units/player/stat_player_pirate.tres" id="2_fwkt7"]
+[ext_resource type="Texture2D" uid="uid://dpxw8tsbgrfse" path="res://assets/sprites/Players/Player_2.png" id="2_mcl8f"]
+
+[node name="PlayerPirate" unique_id=1774284862 instance=ExtResource("1_lpoi3")]
+stats = ExtResource("2_fwkt7")
+
+[node name="Sprite" parent="Visuals" parent_id_path=PackedInt32Array(1156764514) index="2" unique_id=1818146783]
+texture = ExtResource("2_mcl8f")

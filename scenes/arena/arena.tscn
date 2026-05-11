@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://d3qe85otqpf88"]
+
+[ext_resource type="Texture2D" uid="uid://cy4xfx762bxgb" path="res://assets/sprites/BG.png" id="1_8trdl"]
+[ext_resource type="Script" uid="uid://drih8ccvk0sdi" path="res://scripts/arena.gd" id="1_asdgj"]
+[ext_resource type="Texture2D" uid="uid://ov4fmsbglo55" path="res://assets/sprites/Map.png" id="2_5tue2"]
+[ext_resource type="PackedScene" uid="uid://bmrgfs2j8nl7j" path="res://scenes/unit/players/player.tscn" id="3_5tue2"]
+[ext_resource type="Script" uid="uid://dyhtgq3p6qrvi" path="res://scripts/camera_2d.gd" id="5_jx0ua"]
+[ext_resource type="PackedScene" uid="uid://cwh4hu80b1n4k" path="res://scenes/unit/enemy/enemy_shooter.tscn" id="6_jx0ua"]
+
+[node name="Arena" type="Node2D" unique_id=2070620410 node_paths=PackedStringArray("player")]
+script = ExtResource("1_asdgj")
+player = NodePath("Members/Player")
+normal_color = Color(1, 1, 1, 1)
+blocked_color = Color(0.99543077, 0.10492751, 0.36096114, 1)
+critical_color = Color(1, 0.7884327, 0, 1)
+hp_color = Color(0.014999508, 0.84636307, 0.12753943, 1)
+
+[node name="BlackBG" type="Sprite2D" parent="." unique_id=1485831494]
+z_index = -1
+position = Vector2(-81, 314)
+scale = Vector2(2, 2)
+texture = ExtResource("1_8trdl")
+
+[node name="GrassBG" type="Sprite2D" parent="." unique_id=484975188]
+z_index = -1
+scale = Vector2(2, 2)
+texture = ExtResource("2_5tue2")
+
+[node name="Members" type="Node2D" parent="." unique_id=515185085]
+y_sort_enabled = true
+position = Vector2(-6, 14)
+
+[node name="Player" parent="Members" unique_id=1774284862 instance=ExtResource("3_5tue2")]
+y_sort_enabled = true
+
+[node name="Camera2D" type="Camera2D" parent="Members" unique_id=656783818]
+script = ExtResource("5_jx0ua")
+
+[node name="EnemyShooter" parent="." unique_id=264416733 instance=ExtResource("6_jx0ua")]

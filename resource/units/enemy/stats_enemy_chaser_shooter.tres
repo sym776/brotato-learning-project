@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="UnitStats" format=3 uid="uid://xlgpxyxy6ykn"]
+
+[ext_resource type="Texture2D" uid="uid://4mllmwdfhmce" path="res://assets/sprites/Enemies/Enemy_4.png" id="1_h1ocj"]
+[ext_resource type="Script" uid="uid://b4up7xfbnckq3" path="res://resource/units/unit_stats.gd" id="2_bntx5"]
+
+[resource]
+script = ExtResource("2_bntx5")
+name = "enemy_shooter"
+type = 1
+icon = ExtResource("1_h1ocj")
+health = 500
+health_increase_per_wave = 2.0
+damage = 3.0
+damage_increase_per_wave = 1.5
+speed = 260.0
+luck = 0.0
+block_chance = 3.0
+gold_drop = 3
+metadata/_custom_type_script = "uid://b4up7xfbnckq3"

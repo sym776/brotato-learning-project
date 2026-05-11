@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WeaponStats" format=3 uid="uid://rxgm6tpbitwk"]
+
+[ext_resource type="PackedScene" uid="uid://8f85kkn1u661" path="res://scenes/projectiles/projectile_shotgun.tscn" id="1_kemji"]
+[ext_resource type="Script" uid="uid://c4027umneo7pm" path="res://resource/items/weapons/weapon_stats.gd" id="2_o3uyy"]
+
+[resource]
+script = ExtResource("2_o3uyy")
+projectile_scene = ExtResource("1_kemji")
+metadata/_custom_type_script = "uid://c4027umneo7pm"

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cwh4hu80b1n4k"]
+
+[ext_resource type="PackedScene" uid="uid://cror5wh2mxycc" path="res://scenes/unit/enemy/enemy_chaser_slow.tscn" id="1_tty1r"]
+[ext_resource type="Resource" uid="uid://xlgpxyxy6ykn" path="res://resource/units/enemy/stats_enemy_chaser_shooter.tres" id="2_6k67w"]
+[ext_resource type="Texture2D" uid="uid://4mllmwdfhmce" path="res://assets/sprites/Enemies/Enemy_4.png" id="2_tev67"]
+[ext_resource type="Script" uid="uid://i7whwf6jjby4" path="res://scenes/unit/enemy/shoot_behavier.gd" id="4_6k67w"]
+[ext_resource type="PackedScene" uid="uid://e0ngfr11mx1f" path="res://scenes/projectiles/projectile_enemy.tscn" id="5_kpiq8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kpiq8"]
+radius = 440.0
+
+[node name="EnemyShooter" unique_id=264416733 instance=ExtResource("1_tty1r")]
+stats = ExtResource("2_6k67w")
+
+[node name="Sprite" parent="Visuals" parent_id_path=PackedInt32Array(1156764514) index="1" unique_id=1818146783]
+texture = ExtResource("2_tev67")
+
+[node name="Muzzle" type="Marker2D" parent="Visuals" parent_id_path=PackedInt32Array(1156764514) index="2" unique_id=626574788]
+position = Vector2(-84, -40)
+
+[node name="CollisionShape2D" parent="VisionArea" parent_id_path=PackedInt32Array(32471741) index="0" unique_id=2061894720]
+shape = SubResource("CircleShape2D_kpiq8")
+
+[node name="ShootBehavier" type="Node2D" parent="." index="10" unique_id=1942826976 node_paths=PackedStringArray("enemy", "muzzle")]
+script = ExtResource("4_6k67w")
+enemy = NodePath("..")
+muzzle = NodePath("../Visuals/Muzzle")
+projectile_scene = ExtResource("5_kpiq8")
+projectile_speed = 1500.0

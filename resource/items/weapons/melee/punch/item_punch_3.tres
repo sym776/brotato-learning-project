@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemWeapon" format=3 uid="uid://c7y1nhfnyryxa"]
+
+[ext_resource type="Texture2D" uid="uid://cyh23wqn8vcac" path="res://assets/sprites/Weapons/Icons/weapon_punch_icon.png" id="1_3s10y"]
+[ext_resource type="PackedScene" uid="uid://bbilovbr5oc0b" path="res://scenes/weapons/melee/weapon_punch.tscn" id="2_1xr0l"]
+[ext_resource type="Script" uid="uid://cxe1a38cly3m2" path="res://resource/items/weapons/item_weapon.gd" id="2_qj7gr"]
+[ext_resource type="Resource" uid="uid://dwqxfhu8bb3p4" path="res://resource/items/weapons/melee/punch/stats_punch_3.tres" id="3_qj7gr"]
+[ext_resource type="Resource" uid="uid://dbdlriv48ilxr" path="res://resource/items/weapons/melee/punch/item_punch_4.tres" id="4_1xr0l"]
+
+[resource]
+script = ExtResource("2_qj7gr")
+scene = ExtResource("2_1xr0l")
+stats = ExtResource("3_qj7gr")
+upgrade_to = ExtResource("4_1xr0l")
+item_name = "Punch 1"
+item_icon = ExtResource("1_3s10y")
+item_tier = 2
+item_cost = 50
+metadata/_custom_type_script = "uid://cxe1a38cly3m2"

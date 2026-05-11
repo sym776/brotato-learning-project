@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://bmrgfs2j8nl7j"]
+
+[ext_resource type="PackedScene" uid="uid://d3y73mf1rafyq" path="res://scenes/unit/unit.tscn" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://cq4y0iplhlc8b" path="res://scripts/player.gd" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://cproxhccob85g" path="res://assets/sprites/Players/Player_1.png" id="3_dqkch"]
+[ext_resource type="Resource" uid="uid://cjlqcbmbpjt8u" path="res://resource/units/player/stat_player.tres" id="3_qlg0r"]
+[ext_resource type="Script" uid="uid://1qk2e2shm4o0" path="res://scripts/trail.gd" id="4_qlg0r"]
+[ext_resource type="Script" uid="uid://c8g8274mb73pc" path="res://scripts/weapon_container.gd" id="6_bjr3c"]
+
+[sub_resource type="Curve" id="Curve_qlg0r"]
+_data = [Vector2(0, 0.02768588), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.2982101, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qlg0r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wmi8o"]
+radius = 33.13608
+
+[node name="Player" unique_id=1774284862 instance=ExtResource("1_3vyb7")]
+collision_mask = 2
+script = ExtResource("2_qhqgy")
+dash_duration = 0.3
+dash_speed_multi = 2.0
+dash_cooldown = 1.0
+stats = ExtResource("3_qlg0r")
+
+[node name="Trail" type="Line2D" parent="Visuals" parent_id_path=PackedInt32Array(1156764514) index="0" unique_id=1218274579 node_paths=PackedStringArray("player")]
+unique_name_in_owner = true
+top_level = true
+z_index = -1
+position = Vector2(-1, -16)
+width = 50.0
+width_curve = SubResource("Curve_qlg0r")
+script = ExtResource("4_qlg0r")
+player = NodePath("../..")
+trail_duration = 0.7
+
+[node name="Sprite" parent="Visuals" parent_id_path=PackedInt32Array(1156764514) index="2" unique_id=1818146783]
+texture = ExtResource("3_dqkch")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1675682513]
+position = Vector2(5.9604645e-08, -23.000002)
+scale = Vector2(-2.5443332, -2.7043338)
+shape = SubResource("CircleShape2D_qlg0r")
+
+[node name="AnimationPlayer" parent="." index="2" unique_id=2062548672]
+autoplay = &"idle"
+
+[node name="WeaponContainer" type="Node2D" parent="." index="3" unique_id=542112780]
+script = ExtResource("6_bjr3c")
+
+[node name="One" type="Node2D" parent="WeaponContainer" index="0" unique_id=221931132]
+
+[node name="MarkerC" type="Marker2D" parent="WeaponContainer/One" index="0" unique_id=745786687]
+position = Vector2(0, -14)
+
+[node name="Two" type="Node2D" parent="WeaponContainer" index="1" unique_id=291455039]
+
+[node name="MarkerL" type="Marker2D" parent="WeaponContainer/Two" index="0" unique_id=1012583669]
+position = Vector2(-50, 20)
+
+[node name="MarkerR" type="Marker2D" parent="WeaponContainer/Two" index="1" unique_id=44371892]
+position = Vector2(50, 20)
+
+[node name="Three" type="Node2D" parent="WeaponContainer" index="2" unique_id=874171130]
+
+[node name="MarkerL" type="Marker2D" parent="WeaponContainer/Three" index="0" unique_id=1259891226]
+position = Vector2(-50, 20)
+
+[node name="MarkerC" type="Marker2D" parent="WeaponContainer/Three" index="1" unique_id=971553286]
+position = Vector2(0, -115)
+
+[node name="MarkerR" type="Marker2D" parent="WeaponContainer/Three" index="2" unique_id=909883503]
+position = Vector2(50, 20)
+
+[node name="Four" type="Node2D" parent="WeaponContainer" index="3" unique_id=1709372179]
+
+[node name="MarkerDL" type="Marker2D" parent="WeaponContainer/Four" index="0" unique_id=941731359]
+position = Vector2(-50, 20)
+
+[node name="MarkerCL" type="Marker2D" parent="WeaponContainer/Four" index="1" unique_id=1088671079]
+position = Vector2(-70, -60)
+
+[node name="MarkerCR" type="Marker2D" parent="WeaponContainer/Four" index="2" unique_id=1067711770]
+position = Vector2(70, -60)
+
+[node name="MarkerDR" type="Marker2D" parent="WeaponContainer/Four" index="3" unique_id=296407001]
+position = Vector2(50, 20)
+
+[node name="Five" type="Node2D" parent="WeaponContainer" index="4" unique_id=461597877]
+
+[node name="MarkerDL" type="Marker2D" parent="WeaponContainer/Five" index="0" unique_id=15175059]
+position = Vector2(-50, 20)
+
+[node name="MarkerUL" type="Marker2D" parent="WeaponContainer/Five" index="1" unique_id=1284800432]
+position = Vector2(-70, -60)
+
+[node name="MarkerC" type="Marker2D" parent="WeaponContainer/Five" index="2" unique_id=657409662]
+position = Vector2(0, -115)
+
+[node name="MarkerUR" type="Marker2D" parent="WeaponContainer/Five" index="3" unique_id=988430023]
+position = Vector2(70, -60)
+
+[node name="MarkerDR" type="Marker2D" parent="WeaponContainer/Five" index="4" unique_id=441827558]
+position = Vector2(50, 20)
+
+[node name="Six" type="Node2D" parent="WeaponContainer" index="5" unique_id=1800960185]
+
+[node name="MarkerDL" type="Marker2D" parent="WeaponContainer/Six" index="0" unique_id=1346111186]
+position = Vector2(-50, 20)
+
+[node name="MarkerCL" type="Marker2D" parent="WeaponContainer/Six" index="1" unique_id=401114140]
+position = Vector2(-70, -60)
+
+[node name="MarkerUL" type="Marker2D" parent="WeaponContainer/Six" index="2" unique_id=1530049380]
+position = Vector2(-50, -115)
+
+[node name="MarkerUR" type="Marker2D" parent="WeaponContainer/Six" index="3" unique_id=2069436653]
+position = Vector2(50, -115)
+
+[node name="MarkerCR" type="Marker2D" parent="WeaponContainer/Six" index="4" unique_id=2117618123]
+position = Vector2(70, -60)
+
+[node name="MarkerDR" type="Marker2D" parent="WeaponContainer/Six" index="5" unique_id=669598983]
+position = Vector2(50, 20)
+
+[node name="DashTimer" type="Timer" parent="." index="4" unique_id=1814002678]
+one_shot = true
+
+[node name="DashCooldownTimer" type="Timer" parent="." index="5" unique_id=1240157494]
+one_shot = true
+
+[node name="TrailTimer" type="Timer" parent="." index="6" unique_id=1334597893]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="Hurtbox_Component" parent="." index="7" unique_id=1718122925]
+collision_layer = 32
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox_Component" index="0" unique_id=1508353297]
+position = Vector2(0, -26)
+shape = SubResource("CircleShape2D_wmi8o")
+
+[node name="HealthBar" parent="." index="9" unique_id=32288449]
+fill_color = Color(0.30679688, 0.796875, 0.29882813, 1)
+
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="TrailTimer" to="Visuals/Trail" method="_on_trail_timer_timeout"]

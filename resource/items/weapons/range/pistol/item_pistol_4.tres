@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemWeapon" format=3 uid="uid://b1yf4pffwf3lj"]
+
+[ext_resource type="Script" uid="uid://cxe1a38cly3m2" path="res://resource/items/weapons/item_weapon.gd" id="1_mysrv"]
+[ext_resource type="Texture2D" uid="uid://ctbl7s5o37g7v" path="res://assets/sprites/Weapons/Icons/weapon_pistol_icon.png" id="1_sdtnh"]
+[ext_resource type="PackedScene" uid="uid://biiii547s5kpl" path="res://scenes/weapons/range/weapon_pistol.tscn" id="2_p8lfq"]
+[ext_resource type="Resource" uid="uid://b803ahq7ny2yw" path="res://resource/items/weapons/range/pistol/stats_pistol_4.tres" id="4_sdtnh"]
+
+[resource]
+script = ExtResource("1_mysrv")
+type = 1
+scene = ExtResource("2_p8lfq")
+stats = ExtResource("4_sdtnh")
+item_name = "Pistol4"
+item_icon = ExtResource("1_sdtnh")
+item_tier = 3
+metadata/_custom_type_script = "uid://cxe1a38cly3m2"

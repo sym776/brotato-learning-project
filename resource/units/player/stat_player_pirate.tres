@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UnitStats" format=3 uid="uid://b6bxrkwdq2tun"]
+
+[ext_resource type="Texture2D" uid="uid://dpxw8tsbgrfse" path="res://assets/sprites/Players/Player_2.png" id="1_fce8g"]
+[ext_resource type="Script" uid="uid://b4up7xfbnckq3" path="res://resource/units/unit_stats.gd" id="2_4t04x"]
+
+[resource]
+script = ExtResource("2_4t04x")
+name = "Pirate"
+icon = ExtResource("1_fce8g")
+health = 25
+health_increase_per_wave = 0.5
+damage = 4.0
+damage_increase_per_wave = 2.0
+speed = 270.0
+luck = 3.0
+metadata/_custom_type_script = "uid://b4up7xfbnckq3"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WeaponStats" format=3 uid="uid://d3tfcx6odc6q6"]
+
+[ext_resource type="Script" uid="uid://c4027umneo7pm" path="res://resource/items/weapons/weapon_stats.gd" id="1_hpusj"]
+
+[resource]
+script = ExtResource("1_hpusj")
+damage = 12.0
+accuracy = 1.0
+cooldown = 0.9
+max_range = 180.0
+knockback = 1.0
+life_steal = 0.0
+is_rotated = true
+metadata/_custom_type_script = "uid://cxe1a38cly3m2"

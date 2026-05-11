@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ccq288w6ddarl"]
+
+[ext_resource type="PackedScene" uid="uid://biiii547s5kpl" path="res://scenes/weapons/range/weapon_pistol.tscn" id="1_do0ve"]
+[ext_resource type="Texture2D" uid="uid://c7cwrud8hbq0b" path="res://assets/sprites/Weapons/Range/WeaponShotgun.png" id="2_q2o1a"]
+[ext_resource type="Script" uid="uid://tym633c36two" path="res://scenes/weapons/range/shotgun_behavior.gd" id="3_bhln8"]
+
+[node name="WeaponShotgun" unique_id=1005391561 instance=ExtResource("1_do0ve")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1684804287]
+texture = ExtResource("2_q2o1a")
+offset = Vector2(43, -3)
+
+[node name="Muzzle" parent="Sprite2D" index="0" unique_id=1042581238]
+position = Vector2(140, -18)
+
+[node name="WeaponBehavior" parent="." index="3" unique_id=1527988521]
+script = ExtResource("3_bhln8")
+projectile_num = 5
+scatter_range = 40.0

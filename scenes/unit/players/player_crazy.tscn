@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://7uf6uu6g6wjr"]
+
+[ext_resource type="PackedScene" uid="uid://bmrgfs2j8nl7j" path="res://scenes/unit/players/player.tscn" id="1_76wuh"]
+[ext_resource type="Resource" uid="uid://2jhnq87ccbce" path="res://resource/units/player/stat_player_crazy.tres" id="2_0i6ic"]
+[ext_resource type="Texture2D" uid="uid://dq63ocnu3lset" path="res://assets/sprites/Players/Player_3}.png" id="2_yjck2"]
+
+[node name="PlayerCrazy" unique_id=1774284862 instance=ExtResource("1_76wuh")]
+stats = ExtResource("2_0i6ic")
+
+[node name="Sprite" parent="Visuals" parent_id_path=PackedInt32Array(1156764514) index="2" unique_id=1818146783]
+texture = ExtResource("2_yjck2")

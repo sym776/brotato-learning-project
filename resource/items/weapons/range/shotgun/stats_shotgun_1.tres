@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponStats" format=3 uid="uid://bwiyq74yc6xgs"]
+
+[ext_resource type="PackedScene" uid="uid://8f85kkn1u661" path="res://scenes/projectiles/projectile_shotgun.tscn" id="1_3e028"]
+[ext_resource type="Script" uid="uid://c4027umneo7pm" path="res://resource/items/weapons/weapon_stats.gd" id="2_jaguu"]
+
+[resource]
+script = ExtResource("2_jaguu")
+cooldown = 1.5
+max_range = 250.0
+projectile_scene = ExtResource("1_3e028")
+metadata/_custom_type_script = "uid://c4027umneo7pm"

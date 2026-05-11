@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dam2weobfqirr"]
+
+[ext_resource type="Script" uid="uid://deeqyrkqpj0ub" path="res://scenes/ui/floating_text/floating_text.gd" id="1_32222"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dsam5"]
+font_size = 32
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="FloatingText" type="Node2D" unique_id=72523911]
+script = ExtResource("1_32222")
+
+[node name="ValueLabel" type="Label" parent="." unique_id=872980815]
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 22.0
+offset_bottom = 20.666668
+text = "10"
+label_settings = SubResource("LabelSettings_dsam5")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

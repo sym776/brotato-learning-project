@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemWeapon" format=3 uid="uid://fcqo840k2453"]
+
+[ext_resource type="Texture2D" uid="uid://crs6paux78un0" path="res://assets/sprites/Weapons/Icons/weapon_laser_icon.png" id="1_mkind"]
+[ext_resource type="PackedScene" uid="uid://bsw5mywq554nd" path="res://scenes/weapons/range/weapon_laser.tscn" id="2_xm2sq"]
+[ext_resource type="Script" uid="uid://cxe1a38cly3m2" path="res://resource/items/weapons/item_weapon.gd" id="3_dhblg"]
+[ext_resource type="Resource" uid="uid://chfainhxcedf3" path="res://resource/items/weapons/range/lazer/stats_lazer_1.tres" id="4_1qg5a"]
+[ext_resource type="Resource" uid="uid://cf55okt1o6bhi" path="res://resource/items/weapons/range/lazer/item_lazer_3.tres" id="5_cd0cb"]
+
+[resource]
+script = ExtResource("3_dhblg")
+type = 1
+scene = ExtResource("2_xm2sq")
+stats = ExtResource("4_1qg5a")
+upgrade_to = ExtResource("5_cd0cb")
+item_name = "Lazer2"
+item_icon = ExtResource("1_mkind")
+item_tier = 1
+metadata/_custom_type_script = "uid://cxe1a38cly3m2"

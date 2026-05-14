@@ -51,9 +51,7 @@ func create_projectile(delta:float) -> void:
 	velocity = direction * projectile_speed
 	instance.set_projectiled(velocity, enemy.stats.damage, false, false,get_parent())
 	
-		
-	
-	
+
 	
 	
 	

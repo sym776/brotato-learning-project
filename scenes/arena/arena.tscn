@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bmrgfs2j8nl7j" path="res://scenes/unit/players/player.tscn" id="3_5tue2"]
 [ext_resource type="Script" uid="uid://dyhtgq3p6qrvi" path="res://scripts/camera_2d.gd" id="5_jx0ua"]
 [ext_resource type="PackedScene" uid="uid://cwh4hu80b1n4k" path="res://scenes/unit/enemy/enemy_shooter.tscn" id="6_jx0ua"]
+[ext_resource type="Script" uid="uid://cijsxcrk3hqpd" path="res://scenes/arena/spawner.gd" id="7_u52cf"]
+[ext_resource type="Script" uid="uid://da7ykrayed8hj" path="res://resource/waves/wave_data.gd" id="8_6w4xk"]
+[ext_resource type="Resource" uid="uid://3wbugxecychk" path="res://resource/waves/wave_1_to_5.tres" id="9_2ml6w"]
+[ext_resource type="Script" uid="uid://b4up7xfbnckq3" path="res://resource/units/unit_stats.gd" id="10_2ml6w"]
 
 [node name="Arena" type="Node2D" unique_id=2070620410 node_paths=PackedStringArray("player")]
 script = ExtResource("1_asdgj")
@@ -37,3 +41,13 @@ y_sort_enabled = true
 script = ExtResource("5_jx0ua")
 
 [node name="EnemyShooter" parent="." unique_id=264416733 instance=ExtResource("6_jx0ua")]
+position = Vector2(592, -52)
+
+[node name="Spawner" type="Node2D" parent="." unique_id=1148893567]
+script = ExtResource("7_u52cf")
+wave_data = Array[ExtResource("8_6w4xk")]([ExtResource("9_2ml6w")])
+enemy_collection = Array[ExtResource("10_2ml6w")]([null, null, null])
+
+[node name="SpawnTimer" type="Timer" parent="Spawner" unique_id=1855746835]
+
+[node name="WaveTimer" type="Timer" parent="Spawner" unique_id=544590070]

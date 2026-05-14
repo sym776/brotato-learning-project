@@ -30,5 +30,4 @@ from = 1
 to = 5
 units = Array[ExtResource("2_d760o")]([SubResource("Resource_1tpd7"), SubResource("Resource_p2uck"), SubResource("Resource_e65hv")])
 min_spawn_time = 0.5
-max_spawn_time = 2.0
 metadata/_custom_type_script = "uid://da7ykrayed8hj"

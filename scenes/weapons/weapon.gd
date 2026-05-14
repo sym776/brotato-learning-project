@@ -33,7 +33,6 @@ func _process(delta: float) -> void:
 	if can_use_weapon():#若攻击锁为true，则使用武器
 		use_weapon()
 	
-
 #初始化武器配置
 func setup_weapon(data: ItemWeapon) -> void:
 	self.data = data

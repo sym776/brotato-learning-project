@@ -9,7 +9,7 @@ enum SpawnType{
 @export var from: int
 @export var to: int #波次范围
 @export var wave_time:= 20.0 #波次持续时间
-@export var units:Array[WaveUnitData] #这一波有哪些怪 
+@export var units:Array[WaveUnitData] #这一波有哪些怪+权重 
 
 @export var spawn_type:SpawnType = SpawnType.RANDOM #生成方式 随机或固定
 @export var fixed_spawn_time:float = 1.0 #固定方式的时间间隔

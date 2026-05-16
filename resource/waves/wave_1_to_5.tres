@@ -29,5 +29,6 @@ script = ExtResource("1_uhj64")
 from = 1
 to = 5
 units = Array[ExtResource("2_d760o")]([SubResource("Resource_1tpd7"), SubResource("Resource_p2uck"), SubResource("Resource_e65hv")])
+spawn_type = 1
 min_spawn_time = 0.5
 metadata/_custom_type_script = "uid://da7ykrayed8hj"

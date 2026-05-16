@@ -32,5 +32,5 @@ func get_random_unit_scene() -> PackedScene: #
 	var random_unit: PackedScene = enemies[rng.rand_weighted(weights)]
 	return random_unit
 
-func is_valid_index(waveindex: int) -> bool:
-	return true
+func is_valid_index(index: int) -> bool:
+	return from >= index and index <= to

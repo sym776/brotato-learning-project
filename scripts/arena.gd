@@ -29,5 +29,3 @@ func _on_create_damage_text(unit:Node2D,hitbox:HitboxComponent)-> void:#收到on
 	var text:FloatingText = create_floating_text(unit)
 	var color:=critical_color if hitbox.critical else normal_color
 	text.setup(str(hitbox.damage),color)
-
- 

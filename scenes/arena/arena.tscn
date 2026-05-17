@@ -10,6 +10,12 @@
 [ext_resource type="Resource" uid="uid://3wbugxecychk" path="res://resource/waves/wave_1_to_5.tres" id="9_2ml6w"]
 [ext_resource type="Script" uid="uid://b4up7xfbnckq3" path="res://resource/units/unit_stats.gd" id="10_2ml6w"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_6w4xk"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ml6w"]
+font_size = 64
+
 [node name="Arena" type="Node2D" unique_id=2070620410 node_paths=PackedStringArray("player")]
 script = ExtResource("1_asdgj")
 player = NodePath("Members/Player")
@@ -52,12 +58,29 @@ enemy_collection = Array[ExtResource("10_2ml6w")]([null, null, null])
 
 [node name="WaveIndexLabel" type="Label" parent="GameUI" unique_id=1527356399]
 unique_name_in_owner = true
-offset_right = 40.0
-offset_bottom = 20.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -110.0
+offset_right = 110.0
+offset_bottom = 77.333336
+grow_horizontal = 2
+text = "wave 1"
+label_settings = SubResource("LabelSettings_6w4xk")
 
 [node name="WaveTimeLabel" type="Label" parent="GameUI" unique_id=1621231635]
 unique_name_in_owner = true
-offset_right = 40.0
-offset_bottom = 20.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.0
+offset_top = 61.0
+offset_right = 34.0
+offset_bottom = 218.66669
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "10
+"
+label_settings = SubResource("LabelSettings_2ml6w")
 
 [connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="_on_spawn_timer_timeout"]

@@ -7,10 +7,19 @@ class_name Arena
 @export var critical_color: Color #暴击颜色
 @export var hp_color: Color #
 
+@onready var wave_index_label: Label = %WaveIndexLabel
+@onready var wave_time_label: Label = %WaveTimeLabel
+@onready var spawner: Spawner = $Spawner
+
+
 func _ready() -> void:
 	Global.player = player #引入全局player
 	Global.on_create_block_text.connect(_on_create_block_text)#接收全局创建格挡文本信号
 	Global.on_create_damage_text.connect(_on_create_damage_text)#接收全局创建伤害文本信号
+
+func _process(delta: float) -> void:
+	wave_index_label.text = spawner.get_wave_text()
+	wave_time_label.text = spawner.get_wave_timer_text()
 
 #生成悬浮文本	
 func create_floating_text(unit:Node2D) -> FloatingText:

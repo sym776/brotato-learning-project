@@ -6,7 +6,7 @@ class_name Spawner
 @export var enemy_collection:Array[UnitStats]
 
 @onready var spawn_timer: Timer = $SpawnTimer
-@onready var wave_timer: Timer = $WaveTimerw
+@onready var wave_timer: Timer = $WaveTimer
 
 var wave_index: int = 1
 var current_wave_data: WaveData
@@ -14,6 +14,11 @@ var spawned_enemies: Array[Enemy] = []
 
 func _ready() -> void:
 	start_wave()
+
+func get_random_spawn_position() -> Vector2:
+	var random_x: float = randf_range(-spawn_area_size.x, spawn_area_size.x)
+	var random_y: float = randf_range(-spawn_area_size.y, spawn_area_size.y) 
+	return Vector2(random_x, random_y)
 
 func find_wave_data() -> WaveData:
 	for wave in wave_data:
@@ -47,12 +52,19 @@ func set_spawn_timer() -> void: #根据类型更新 刷怪计时器
 func spawn_enemy() -> void:
 	var enemy_scene:= current_wave_data.get_random_unit_scene() as PackedScene
 	if enemy_scene:
+		var spawn_pos: Vector2 = get_random_spawn_position()
 		var enemy_instance:= enemy_scene.instantiate() as Enemy
-		enemy_instance.global_position = Vector2.ZERO
+		enemy_instance.global_position = spawn_pos
 		get_parent().add_child(enemy_instance)
 		spawned_enemies.append(enemy_instance)
 	
 	set_spawn_timer()
+
+func get_wave_text() -> String:
+	return "Wave %s" % wave_index
+
+func get_wave_timer_text() -> String:
+	return str(max(0,int(wave_timer.time_left)))
 
 func _on_spawn_timer_timeout() -> void:
 	spawn_enemy()

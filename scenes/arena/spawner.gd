@@ -15,12 +15,12 @@ var spawned_enemies: Array[Enemy] = []
 func _ready() -> void:
 	start_wave()
 
-func get_random_spawn_position() -> Vector2:
+func get_random_spawn_position() -> Vector2: #随机生成位置
 	var random_x: float = randf_range(-spawn_area_size.x, spawn_area_size.x)
 	var random_y: float = randf_range(-spawn_area_size.y, spawn_area_size.y) 
 	return Vector2(random_x, random_y)
 
-func find_wave_data() -> WaveData:
+func find_wave_data() -> WaveData: #
 	for wave in wave_data:
 		if wave and wave.is_valid_index(wave_index):
 			return wave
@@ -39,7 +39,7 @@ func start_wave() -> void:
 	
 	set_spawn_timer()
 	
-func set_spawn_timer() -> void: #根据类型更新 刷怪计时器
+func set_spawn_timer() -> void: #根据类型设置 刷怪间隔计时器
 	match current_wave_data.spawn_type:
 		WaveData.SpawnType.FIXED:
 			spawn_timer.wait_time = current_wave_data.fixed_spawn_time
@@ -50,9 +50,9 @@ func set_spawn_timer() -> void: #根据类型更新 刷怪计时器
 		spawn_timer.start()
 		
 func spawn_enemy() -> void:
-	var enemy_scene:= current_wave_data.get_random_unit_scene() as PackedScene
+	var enemy_scene:= current_wave_data.get_random_unit_scene() as PackedScene #按权重随机生成敌人
 	if enemy_scene:
-		var spawn_pos: Vector2 = get_random_spawn_position()
+		var spawn_pos: Vector2 = get_random_spawn_position() #随机位置
 		var enemy_instance:= enemy_scene.instantiate() as Enemy
 		enemy_instance.global_position = spawn_pos
 		get_parent().add_child(enemy_instance)
@@ -67,6 +67,9 @@ func get_wave_timer_text() -> String:
 	return str(max(0,int(wave_timer.time_left)))
 
 func _on_spawn_timer_timeout() -> void:
+	if not current_wave_data or wave_timer.is_stopped():
+		spawn_timer.stop()
+		return 
 	spawn_enemy()
 	
 	

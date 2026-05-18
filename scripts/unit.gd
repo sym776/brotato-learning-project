@@ -13,7 +13,7 @@ class_name Unit
 func _ready() -> void:
 	#调用生命组件初始化方法
 	health_component.setup(stats)
-
+	
 #定义受击发光材质方法
 func set_flash_material() -> void:
 	#使当前贴图变为全局中定义受击发光的贴图

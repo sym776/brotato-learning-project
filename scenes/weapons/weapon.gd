@@ -19,6 +19,8 @@ func _ready() -> void:
 	atk_start_pos = sprite.position
 
 func _process(delta: float) -> void:
+	if Global.game_paused: return
+	
 	#如果攻击状态锁未开启，且攻击目标数组大于0，调用更新最近攻击目标方法，否则最近攻击目标为空
 	if not is_attacking:
 		if targets.size() > 0:

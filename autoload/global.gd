@@ -15,9 +15,11 @@ enum UpgradeTier{
 	LEGENDARY
 }
 
-
 var player:Player
 #定义判断概率（格挡\暴击）是否成功的方法
+
+var game_paused:bool = false
+
 func get_chance_success(chance: float) -> bool:
 	var random: float = randf_range(0,1.0)
 	if chance > random:

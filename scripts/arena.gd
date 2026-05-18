@@ -18,6 +18,7 @@ func _ready() -> void:
 	Global.on_create_damage_text.connect(_on_create_damage_text)#接收全局创建伤害文本信号
 
 func _process(delta: float) -> void:
+	if Global.game_paused: return #如果游戏暂停，则循环暂停
 	wave_index_label.text = spawner.get_wave_text()
 	wave_time_label.text = spawner.get_wave_timer_text()
 

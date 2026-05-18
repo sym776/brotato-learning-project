@@ -14,6 +14,9 @@ var knockback_power: float
 
 
 func _process(delta: float) -> void:
+	
+	if Global.game_paused: return
+	
 	if not can_move:#若不能移动，return
 		return
 	

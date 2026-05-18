@@ -88,4 +88,5 @@ func _on_spawn_timer_timeout() -> void:
 func _on_wave_timer_timeout() -> void:
 	spawn_timer.stop()
 	clear_enemies()
+	Global.game_paused = true
 	updata_enemies_new_wave()

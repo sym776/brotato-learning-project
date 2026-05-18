@@ -51,6 +51,11 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
+	
+	if Global.game_paused: 
+		animation_player.stop()
+		return
+	
 	#设置移动方向
 	move_dir = Input.get_vector("move_left","move_right","move_up","move_down")
 	#设置速度为移动方向 * 资源中的速度
@@ -71,7 +76,7 @@ func _process(delta: float) -> void:
 		start_dash()
 	#更新动画和角色朝向
 	update_animations()
-	updata_rotation()
+	update_rotation()
 
 #增加武器
 func add_weapon(data:ItemWeapon) -> void:
@@ -90,7 +95,7 @@ func update_animations()-> void :
 	else:
 		animation_player.play(&"idle")	
 #更新角色朝向
-func updata_rotation() -> void:
+func update_rotation() -> void:
 	if move_dir.x == 0:
 		return
 	if move_dir.x > 0:

@@ -13,7 +13,6 @@ var knockback_dir: Vector2
 var knockback_power: float 
 
 
-
 func _process(delta: float) -> void:
 	if not can_move:#若不能移动，return
 		return
@@ -42,6 +41,13 @@ func get_move_direction() -> Vector2:
 			direction += flock_push	* vector.normalized() / vector.length()
 	return direction
 
+func destroy_enemies() -> void:
+	can_move = false
+	animation_player.play(&"die")
+	await animation_player.animation_finished
+	queue_free()
+	
+	
 #更新朝向	
 func update_rotation():
 	if not is_instance_valid(Global.player):

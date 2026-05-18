@@ -60,6 +60,19 @@ func spawn_enemy() -> void:
 	
 	set_spawn_timer()
 
+func updata_enemies_new_wave() -> void:
+	for stat: UnitStats in enemy_collection:
+		stat.health += stat.health_increase_per_wave
+		stat.damage += stat.damage_increase_per_wave
+
+func clear_enemies() -> void:
+	if spawned_enemies.size() > 0:
+		for enemy: Enemy in spawned_enemies:
+			if is_instance_valid(enemy):
+				enemy.destroy_enemies()
+		
+		spawned_enemies.clear()
+
 func get_wave_text() -> String:
 	return "Wave %s" % wave_index
 
@@ -71,6 +84,8 @@ func _on_spawn_timer_timeout() -> void:
 		spawn_timer.stop()
 		return 
 	spawn_enemy()
-	
-	
-	
+
+func _on_wave_timer_timeout() -> void:
+	spawn_timer.stop()
+	clear_enemies()
+	updata_enemies_new_wave()

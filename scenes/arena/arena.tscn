@@ -8,11 +8,12 @@
 [ext_resource type="Script" uid="uid://cijsxcrk3hqpd" path="res://scenes/arena/spawner.gd" id="7_u52cf"]
 [ext_resource type="Script" uid="uid://da7ykrayed8hj" path="res://resource/waves/wave_data.gd" id="8_6w4xk"]
 [ext_resource type="Resource" uid="uid://3wbugxecychk" path="res://resource/waves/wave_1_to_5.tres" id="9_2ml6w"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_6w4xk"]
-font_size = 64
+[ext_resource type="PackedScene" uid="uid://cym3qgnidu2m5" path="res://scenes/ui/stats_container/stats_container.tscn" id="9_6w4xk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2ml6w"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_6w4xk"]
 font_size = 64
 
 [node name="Arena" type="Node2D" unique_id=2070620410 node_paths=PackedStringArray("player")]
@@ -56,17 +57,7 @@ one_shot = true
 
 [node name="GameUI" type="CanvasLayer" parent="." unique_id=773390766]
 
-[node name="WaveIndexLabel" type="Label" parent="GameUI" unique_id=1527356399]
-unique_name_in_owner = true
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -110.0
-offset_right = 110.0
-offset_bottom = 77.333336
-grow_horizontal = 2
-text = "wave 1"
-label_settings = SubResource("LabelSettings_6w4xk")
+[node name="StatsContainer" parent="GameUI" unique_id=1431799386 instance=ExtResource("9_6w4xk")]
 
 [node name="WaveTimeLabel" type="Label" parent="GameUI" unique_id=1621231635]
 unique_name_in_owner = true
@@ -82,6 +73,18 @@ size_flags_horizontal = 4
 text = "10
 "
 label_settings = SubResource("LabelSettings_2ml6w")
+
+[node name="WaveIndexLabel" type="Label" parent="GameUI" unique_id=1527356399]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -110.0
+offset_right = 110.0
+offset_bottom = 77.333336
+grow_horizontal = 2
+text = "wave 1"
+label_settings = SubResource("LabelSettings_6w4xk")
 
 [connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Spawner/WaveTimer" to="Spawner" method="_on_wave_timer_timeout"]

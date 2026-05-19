@@ -21,8 +21,8 @@ Global="*uid://dkqb2rvlcebil"
 
 [display]
 
-window/size/viewport_width=1080
-window/size/viewport_height=720
+window/size/viewport_width=1500
+window/size/viewport_height=800
 window/stretch/mode="canvas_items"
 
 [gui]

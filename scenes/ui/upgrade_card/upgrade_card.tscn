@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://l56m7c7fhvsq"]
+
+[ext_resource type="Script" uid="uid://cwrdtrr4jr3rb" path="res://scenes/ui/upgrade_card/upgrade_card.gd" id="1_mkexl"]
+[ext_resource type="StyleBox" uid="uid://jj680qjt1gsk" path="res://styles/common_style.tres" id="1_v41mk"]
+[ext_resource type="Texture2D" uid="uid://dn68qq5evmvwa" path="res://assets/sprites/Upgrades/12.png" id="2_p145h"]
+[ext_resource type="PackedScene" uid="uid://dfode22cresnk" path="res://scenes/ui/custom_button/custom_button.tscn" id="3_p145h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kjnsj"]
+font_size = 28
+
+[node name="UpgradeCard" type="Panel" unique_id=1165006552]
+custom_minimum_size = Vector2(300, 220)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = ExtResource("1_v41mk")
+script = ExtResource("1_mkexl")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1188576778]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Control" type="Control" parent="MarginContainer" unique_id=1627144274]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/Control" unique_id=1226582034]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_p145h")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="MarginContainer/Control" unique_id=1129151269]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 10.0
+offset_right = 140.0
+offset_bottom = 30.0
+text = "DAMAGE"
+label_settings = SubResource("LabelSettings_kjnsj")
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="MarginContainer/Control" unique_id=2083416860]
+modulate = Color(1, 0.8904495, 0, 1)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 60.0
+offset_right = 140.0
+offset_bottom = 93.83333
+text = "+ 1"
+label_settings = SubResource("LabelSettings_kjnsj")
+vertical_alignment = 1
+
+[node name="CustomButton" parent="MarginContainer/Control" unique_id=758673877 instance=ExtResource("3_p145h")]
+layout_mode = 0
+anchors_preset = 0

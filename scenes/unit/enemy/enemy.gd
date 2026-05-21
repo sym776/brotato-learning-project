@@ -68,17 +68,16 @@ func can_move_towards_player() -> bool:
 	and  global_position.distance_to\
 	(Global.player.global_position) > 60
 
-	
 func reset_knockback() -> void:#重置
 	knockback_power = 0.0
 	knockback_dir = Vector2(0,0)
 	
 func apply_knockback(knockback_dir:Vector2, knockback_power:float) -> void:
-	self.knockback_dir = knockback_dir
-	self.knockback_power = knockback_power
 	if knockback_timer.time_left > 0:#清空旧计时器，并重置计时器，将击退方向和力度设为0
 		knockback_timer.stop()
 		reset_knockback()
+	self.knockback_dir = knockback_dir
+	self.knockback_power = knockback_power
 	knockback_timer.start()#启动计时器，计时器未启动时time_left==0
 	
 func _on_knockback_timer_timeout() -> void:

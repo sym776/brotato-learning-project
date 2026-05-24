@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bb2dquue2id4e"]
 
 [ext_resource type="PackedScene" uid="uid://l56m7c7fhvsq" path="res://scenes/ui/upgrade_card/upgrade_card.tscn" id="1_52meh"]
+[ext_resource type="Script" uid="uid://c5y2bm0fpwkbh" path="res://scenes/ui/upgrade_panel/upgrade_panel.gd" id="1_l8hix"]
 [ext_resource type="PackedScene" uid="uid://cym3qgnidu2m5" path="res://scenes/ui/stats_container/stats_container.tscn" id="2_l8hix"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vxs30"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_l8hix")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=742400545]
 layout_mode = 1
@@ -23,9 +25,13 @@ grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=802226520]
 layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1322442110]
 layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1366317566]
 layout_mode = 2

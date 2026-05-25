@@ -1,11 +1,11 @@
 extends Panel
 class_name UpgradeCard
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@export var item_data: ItemUpgrade:set = _set_data
 
+@onready var icon: TextureRect = %Icon
+@onready var item_name: Label = %Name
+@onready var description: Label = %Description
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _set_data(value: ItemUpgrade) -> void:
+	item_data = value

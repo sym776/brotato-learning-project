@@ -1,11 +1,21 @@
 extends Panel
 class_name UpgradePanel
 
-# Called when the node enters the scene tree for the first time.
+const UPGRADE_CARD_SCENE = preload("uid://l56m7c7fhvsq")
+
+@export var upgrade_list: Array[ItemUpgrade]
+
+@onready var items_container: HBoxContainer = %ItemsContainer
+
 func _ready() -> void:
-	pass # Replace with function body.
+	load_upgrades()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func load_upgrades() -> void:
+	for child in items_container.get_children():
+		child.queue_free()
+		
+	for i in 4:
+		var random_upg := upgrade_list.pick_random() as ItemUpgrade 
+		var card_instance: = UPGRADE_CARD_SCENE.instantiate() as UpgradeCard
+		items_container.add_child(card_instance)
+		card_instance.item_data = random_upg

@@ -8,6 +8,8 @@ const FLASH_MATERIAL = preload("uid://bsox2vug0w1ya")
 #预加载float_text.tscn模板
 const FLOATING_TEXT_SCENE = preload("uid://dam2weobfqirr")
 
+signal on_upgrade_selected
+
 enum UpgradeTier{
 	COMMON,
 	RARE,

@@ -10,12 +10,14 @@ class_name Arena
 @onready var wave_index_label: Label = %WaveIndexLabel
 @onready var wave_time_label: Label = %WaveTimeLabel
 @onready var spawner: Spawner = $Spawner
+@onready var upgrade_panel: UpgradePanel = $GameUI/UpgradePanel
 
 
 func _ready() -> void:
 	Global.player = player #引入全局player
 	Global.on_create_block_text.connect(_on_create_block_text)#接收全局创建格挡文本信号
 	Global.on_create_damage_text.connect(_on_create_damage_text)#接收全局创建伤害文本信号
+	Global.on_upgrade_selected.connect(_on_upgrade_selected)
 
 func _process(delta: float) -> void:
 	if Global.game_paused: return #如果游戏暂停，则循环暂停
@@ -39,3 +41,6 @@ func _on_create_damage_text(unit:Node2D,hitbox:HitboxComponent)-> void:#收到on
 	var text:FloatingText = create_floating_text(unit)
 	var color:=critical_color if hitbox.critical else normal_color
 	text.setup(str(hitbox.damage),color)
+	
+func _on_upgrade_selected() -> void:
+	pass

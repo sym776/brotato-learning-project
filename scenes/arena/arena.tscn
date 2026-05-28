@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d3qe85otqpf88"]
 
 [ext_resource type="Texture2D" uid="uid://cy4xfx762bxgb" path="res://assets/sprites/BG.png" id="1_8trdl"]
-[ext_resource type="Script" uid="uid://drih8ccvk0sdi" path="res://scripts/arena.gd" id="1_asdgj"]
+[ext_resource type="Script" uid="uid://drih8ccvk0sdi" path="res://scenes/arena/arena.gd" id="1_asdgj"]
 [ext_resource type="Texture2D" uid="uid://ov4fmsbglo55" path="res://assets/sprites/Map.png" id="2_5tue2"]
 [ext_resource type="PackedScene" uid="uid://bmrgfs2j8nl7j" path="res://scenes/unit/players/player.tscn" id="3_5tue2"]
 [ext_resource type="Script" uid="uid://dyhtgq3p6qrvi" path="res://scripts/camera_2d.gd" id="5_jx0ua"]
@@ -63,9 +63,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -34.0
-offset_top = 61.0
+offset_top = 87.0
 offset_right = 34.0
-offset_bottom = 218.66669
+offset_bottom = 244.66669
 grow_horizontal = 2
 size_flags_horizontal = 4
 text = "10
@@ -78,13 +78,16 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -110.0
+offset_top = 26.0
 offset_right = 110.0
-offset_bottom = 77.333336
+offset_bottom = 103.333336
 grow_horizontal = 2
 text = "wave 1"
 label_settings = SubResource("LabelSettings_6w4xk")
 
 [node name="UpgradePanel" parent="GameUI" unique_id=1108552227 instance=ExtResource("9_6w4xk")]
+visible = false
 
+[connection signal="on_wave_completed" from="Spawner" to="." method="_on_spawner_on_wave_completed"]
 [connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Spawner/WaveTimer" to="Spawner" method="_on_wave_timer_timeout"]

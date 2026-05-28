@@ -1,6 +1,8 @@
 extends Node2D
 class_name Spawner
 
+signal on_wave_completed
+
 @export var spawn_area_size: Vector2 = Vector2(1000,500)
 @export var wave_data:Array[WaveData]
 @export var enemy_collection:Array[UnitStats]
@@ -11,9 +13,6 @@ class_name Spawner
 var wave_index: int = 1
 var current_wave_data: WaveData
 var spawned_enemies: Array[Enemy] = []
-
-func _ready() -> void:
-	start_wave()
 
 func get_random_spawn_position() -> Vector2: #随机生成位置
 	var random_x: float = randf_range(-spawn_area_size.x, spawn_area_size.x)
@@ -86,6 +85,7 @@ func _on_spawn_timer_timeout() -> void:
 	spawn_enemy()
 
 func _on_wave_timer_timeout() -> void:
+	on_wave_completed.emit()
 	spawn_timer.stop()
 	clear_enemies()
 	Global.game_paused = true

@@ -34,9 +34,11 @@ func take_damage(value: float) -> void:
 func heal(amount: float) -> void:
 	if current_health <= 0:
 		return
-		#现生命值更新
-		current_health += amount
-		current_health = min(current_health, max_health)
+	#现生命值更新
+	current_health += amount
+	current_health = min(current_health, max_health)
+	on_health_changed.emit(current_health,max_health)
+		
 #设置死亡方法，死亡则当前节点从场景树删除
 func die() -> void:
 	owner.queue_free()

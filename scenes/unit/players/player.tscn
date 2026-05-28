@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bmrgfs2j8nl7j"]
 
 [ext_resource type="PackedScene" uid="uid://d3y73mf1rafyq" path="res://scenes/unit/unit.tscn" id="1_3vyb7"]
-[ext_resource type="Script" uid="uid://cq4y0iplhlc8b" path="res://scripts/player.gd" id="2_qhqgy"]
+[ext_resource type="Script" uid="uid://cq4y0iplhlc8b" path="res://resource/units/player/player.gd" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://cproxhccob85g" path="res://assets/sprites/Players/Player_1.png" id="3_dqkch"]
 [ext_resource type="Resource" uid="uid://cjlqcbmbpjt8u" path="res://resource/units/player/stat_player.tres" id="3_qlg0r"]
 [ext_resource type="Script" uid="uid://1qk2e2shm4o0" path="res://scripts/trail.gd" id="4_qlg0r"]
@@ -145,5 +145,10 @@ shape = SubResource("CircleShape2D_wmi8o")
 [node name="HealthBar" parent="." index="9" unique_id=32288449]
 fill_color = Color(0.30679688, 0.796875, 0.29882813, 1)
 
+[node name="HPRegenTimer" type="Timer" parent="." index="11" unique_id=1971033447]
+wait_time = 3.0
+autostart = true
+
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="TrailTimer" to="Visuals/Trail" method="_on_trail_timer_timeout"]
+[connection signal="timeout" from="HPRegenTimer" to="." method="_on_hp_regen_timer_timeout"]

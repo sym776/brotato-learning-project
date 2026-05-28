@@ -18,6 +18,9 @@ func _ready() -> void:
 	Global.on_create_block_text.connect(_on_create_block_text)#接收全局创建格挡文本信号
 	Global.on_create_damage_text.connect(_on_create_damage_text)#接收全局创建伤害文本信号
 	Global.on_upgrade_selected.connect(_on_upgrade_selected)
+	Global.on_create_heal_text.connect(_on_create_heal_text)
+	
+	spawner.start_wave()
 
 func _process(delta: float) -> void:
 	if Global.game_paused: return #如果游戏暂停，则循环暂停
@@ -36,11 +39,30 @@ func create_floating_text(unit:Node2D) -> FloatingText:
 func _on_create_block_text(unit:Node2D)-> void:#收到on_create_block_text信号触发该方法
 	var text: FloatingText = create_floating_text(unit)
 	text.setup("Blocked!",blocked_color)
+
+func show_upgrades() -> void:
+	upgrade_panel.show()
+
+func start_new_wave() -> void:
+	Global.game_paused = false
+	Global.player.update_player_new_wave()
+	spawner.wave_index += 1
+	spawner.start_wave()
 	
-func _on_create_damage_text(unit:Node2D,hitbox:HitboxComponent)-> void:#收到on_create_damage_text信号触发该方法
+func _on_create_damage_text(unit:Node2D,hitbox:HitboxComponent) -> void:#收到on_create_damage_text信号触发该方法
 	var text:FloatingText = create_floating_text(unit)
 	var color:=critical_color if hitbox.critical else normal_color
 	text.setup(str(hitbox.damage),color)
+
+func _on_create_heal_text(unit:Node2D, heal_value:float) -> void:
+	var text:FloatingText = create_floating_text(unit)
+	text.setup("+ %s" % heal_value, hp_color)
 	
 func _on_upgrade_selected() -> void:
-	pass
+	upgrade_panel.hide()
+	start_new_wave()
+
+func _on_spawner_on_wave_completed() -> void:
+	if not Global.player:return
+	await get_tree().create_timer(1.0).timeout
+	show_upgrades() 

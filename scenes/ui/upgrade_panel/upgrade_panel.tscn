@@ -2,21 +2,22 @@
 
 [ext_resource type="PackedScene" uid="uid://l56m7c7fhvsq" path="res://scenes/ui/upgrade_card/upgrade_card.tscn" id="1_52meh"]
 [ext_resource type="Script" uid="uid://c5y2bm0fpwkbh" path="res://scenes/ui/upgrade_panel/upgrade_panel.gd" id="1_l8hix"]
-[ext_resource type="Script" uid="uid://335nxtqsgwdr" path="res://resource/items/weapons/upgrades/item_upgrade.gd" id="2_aghkh"]
+[ext_resource type="Script" uid="uid://335nxtqsgwdr" path="res://resource/items/upgrades/item_upgrade.gd" id="2_aghkh"]
 [ext_resource type="PackedScene" uid="uid://cym3qgnidu2m5" path="res://scenes/ui/stats_container/stats_container.tscn" id="2_l8hix"]
-[ext_resource type="Resource" uid="uid://cq7er2kamlyq5" path="res://resource/items/weapons/upgrades/data/upgrade_block_1.tres" id="3_evmld"]
-[ext_resource type="Resource" uid="uid://biaq011pq1ukm" path="res://resource/items/weapons/upgrades/data/upgrade_damage_1.tres" id="4_t2jfx"]
-[ext_resource type="Resource" uid="uid://cu5viu8xbg5og" path="res://resource/items/weapons/upgrades/data/upgrade_harvesting_1.tres" id="5_cehub"]
-[ext_resource type="Resource" uid="uid://cbuds8b56hglq" path="res://resource/items/weapons/upgrades/data/upgrade_health_1.tres" id="6_078e8"]
-[ext_resource type="Resource" uid="uid://drfosxmrxpgxw" path="res://resource/items/weapons/upgrades/data/upgrade_hp_regen_1.tres" id="7_jevkw"]
-[ext_resource type="Resource" uid="uid://ort1ri6q7c8g" path="res://resource/items/weapons/upgrades/data/upgrade_life_steal_1.tres" id="8_h4hr2"]
-[ext_resource type="Resource" uid="uid://cx7ii07il2cos" path="res://resource/items/weapons/upgrades/data/upgrade_luck_3.tres" id="9_lndip"]
-[ext_resource type="Resource" uid="uid://udel7as6naiu" path="res://resource/items/weapons/upgrades/data/upgrade_speed_4.tres" id="10_23ymm"]
+[ext_resource type="Resource" uid="uid://cq7er2kamlyq5" path="res://resource/items/upgrades/data/upgrade_block_1.tres" id="3_evmld"]
+[ext_resource type="Resource" uid="uid://biaq011pq1ukm" path="res://resource/items/upgrades/data/upgrade_damage_1.tres" id="4_t2jfx"]
+[ext_resource type="Resource" uid="uid://cu5viu8xbg5og" path="res://resource/items/upgrades/data/upgrade_harvesting_1.tres" id="5_cehub"]
+[ext_resource type="Resource" uid="uid://cbuds8b56hglq" path="res://resource/items/upgrades/data/upgrade_health_1.tres" id="6_078e8"]
+[ext_resource type="Resource" uid="uid://drfosxmrxpgxw" path="res://resource/items/upgrades/data/upgrade_hp_regen_1.tres" id="7_jevkw"]
+[ext_resource type="Resource" uid="uid://ort1ri6q7c8g" path="res://resource/items/upgrades/data/upgrade_life_steal_1.tres" id="8_h4hr2"]
+[ext_resource type="Resource" uid="uid://cx7ii07il2cos" path="res://resource/items/upgrades/data/upgrade_luck_3.tres" id="9_lndip"]
+[ext_resource type="Resource" uid="uid://udel7as6naiu" path="res://resource/items/upgrades/data/upgrade_speed_4.tres" id="10_23ymm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vxs30"]
 font_size = 100
 
 [node name="UpgradePanel" type="Panel" unique_id=1108552227]
+self_modulate = Color(0.2734375, 0.2734375, 0.2734375, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

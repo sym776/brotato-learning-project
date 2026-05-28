@@ -9,7 +9,6 @@ class_name Unit
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var flash_timer: Timer = $FlashTimer
 
-
 func _ready() -> void:
 	#调用生命组件初始化方法
 	health_component.setup(stats)

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemUpgrade" format=3 uid="uid://udel7as6naiu"]
 
 [ext_resource type="Texture2D" uid="uid://dac1qxk0rktmg" path="res://assets/sprites/Upgrades/11.png" id="1_5fksi"]
-[ext_resource type="Script" uid="uid://335nxtqsgwdr" path="res://resource/items/weapons/upgrades/item_upgrade.gd" id="2_dhyr8"]
+[ext_resource type="Script" uid="uid://335nxtqsgwdr" path="res://resource/items/upgrades/item_upgrade.gd" id="2_dhyr8"]
 
 [resource]
 script = ExtResource("2_dhyr8")

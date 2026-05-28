@@ -3,12 +3,15 @@ extends Node
 signal on_create_block_text(unit: Node2D)
 #定义信号：创建一个伤害数字
 signal on_create_damage_text(unit: Node2D, hitbox: HitboxComponent)
+
+signal on_create_heal_text(unit: Node2D, heal: float)
+
+signal on_upgrade_selected #升级选择信号
+
 #定义受击发光材质常量，预加载
 const FLASH_MATERIAL = preload("uid://bsox2vug0w1ya")
 #预加载float_text.tscn模板
 const FLOATING_TEXT_SCENE = preload("uid://dam2weobfqirr")
-
-signal on_upgrade_selected
 
 enum UpgradeTier{
 	COMMON,

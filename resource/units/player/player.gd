@@ -7,6 +7,9 @@ class_name Player
 #获取已有节点引用，冲刺计时、冲刺冷却计时、碰撞形状、拖尾
 @onready var dash_timer: Timer = $DashTimer
 @onready var dash_cooldown_timer: Timer = $DashCooldownTimer
+@onready var hp_regen_timer: Timer = $HPRegenTimer
+
+
 @onready var collision: CollisionShape2D = $CollisionShape2D
 @onready var trail: Trail = %Trail
 @onready var weapon_container: WeaponContainer = $WeaponContainer
@@ -125,8 +128,28 @@ func can_dash() -> bool:
 func is_facing_right()-> bool:
 	return visuals.scale.x == -0.5
 
+func update_player_new_wave() -> void:
+	stats.health += stats.health_increase_per_wave
+	health_component.setup(stats)
+
 #冲刺持续时间timeout
 func _on_dash_timer_timeout() -> void:
 	is_dashing = false
-	visuals.modulate.a = 1
+	visuals.modulate.a = 1.0
+	move_dir = Vector2.ZERO
 	collision.set_deferred("disabled",false)
+
+
+func _on_hp_regen_timer_timeout() -> void:
+	if health_component.current_health <= 0:
+		return
+		
+	if health_component.current_health < stats.health:
+		var heal_value: float = stats.hp_regen
+		health_component.heal(heal_value)
+		Global.on_create_heal_text.emit(self,heal_value)
+		
+		
+		
+		
+		

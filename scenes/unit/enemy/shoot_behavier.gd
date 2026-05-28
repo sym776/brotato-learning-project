@@ -42,7 +42,6 @@ func start_to_shoot() -> void:
 	
 func end_shoot() -> void:
 	is_shooting = false
-	print("111")
 	enemy.can_move = true
 	current_cooldown = cooldown_time
 	

@@ -17,9 +17,9 @@ func _ready() -> void:
 	#更改颜色后单独覆盖主题里的background，下同
 	progress_bar.add_theme_stylebox_override("background",back_style)
 	progress_bar.add_theme_stylebox_override("fill",fill_style)
-	
+
 #滚动条progress_bar以及文本label更新方法
-func update_bar(value : float,health:float) ->void:
+func update_bar(value : float,health:float) -> void:
 	progress_bar.value = value	
 	health_amount.text = str(health)
 

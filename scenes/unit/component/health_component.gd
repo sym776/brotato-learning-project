@@ -42,25 +42,3 @@ func heal(amount: float) -> void:
 #设置死亡方法，死亡则当前节点从场景树删除
 func die() -> void:
 	owner.queue_free()
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	 

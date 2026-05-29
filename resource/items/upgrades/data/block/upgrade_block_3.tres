@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemUpgrade" format=3 uid="uid://byrqx262e6wan"]
+
+[ext_resource type="Script" uid="uid://335nxtqsgwdr" path="res://resource/items/upgrades/item_upgrade.gd" id="2_o2ur1"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_detjc"]
+load_path = "res://.godot/imported/8.png-83e52fce42f6532090283ffa155bbaa7.ctex"
+
+[resource]
+script = ExtResource("2_o2ur1")
+value = 3.0
+description = "+3"
+stat_id = "block_chance"
+item_name = "Block"
+item_icon = SubResource("CompressedTexture2D_detjc")
+item_tier = 2
+item_type = 1
+metadata/_custom_type_script = "uid://335nxtqsgwdr"

@@ -65,4 +65,5 @@ func _on_upgrade_selected() -> void:
 func _on_spawner_on_wave_completed() -> void:
 	if not Global.player:return
 	await get_tree().create_timer(1.0).timeout
+	upgrade_panel.load_upgrades()
 	show_upgrades() 

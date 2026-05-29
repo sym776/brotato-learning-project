@@ -15,7 +15,7 @@ enum UnitType {
 @export var damage_increase_per_wave: float = 1.0
 @export var speed: float = 300
 @export var luck := 1.0
-@export var block_chance := 0.0
+@export var block_chance : float = 0.0
 @export var gold_drop : int = 1
 @export var hp_regen: float = 0.0
 @export var life_steal: float = 0.0

@@ -1,4 +1,4 @@
-extends ItemBase
+extends ItemBase #资源脚本类
 class_name ItemUpgrade
 
 @export var value: float

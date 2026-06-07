@@ -31,7 +31,7 @@ func create_one_projectile() -> void:
 	get_tree().root.add_child(instance)
 	instance.global_position = muzzle.global_position
 	var velocity: Vector2 = Vector2.RIGHT.rotated(weapon.rotation+deg_to_rad(angle_offset)) * weapon.data.stats.projectile_speed
-	instance.set_projectiled(velocity, weapon.data.stats.damage, critical, weapon.data.stats.knockback, weapon.get_parent())
+	instance.set_projectiled(velocity, get_damage(), critical, weapon.data.stats.knockback, weapon.get_parent())
 
 
 func create_shotgun_projectile() -> void:

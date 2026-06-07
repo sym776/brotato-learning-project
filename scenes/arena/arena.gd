@@ -41,6 +41,7 @@ func _on_create_block_text(unit:Node2D)-> void:#收到on_create_block_text信号
 	text.setup("Blocked!",blocked_color)
 
 func show_upgrades() -> void:
+	Global.calculate_tier_probability(spawner.wave_index, Global.UPGRADE_PROBILITY_CONFIG)
 	upgrade_panel.show()
 
 func start_new_wave() -> void:

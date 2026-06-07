@@ -5,13 +5,37 @@
 [ext_resource type="Script" uid="uid://335nxtqsgwdr" path="res://resource/items/upgrades/item_upgrade.gd" id="2_aghkh"]
 [ext_resource type="PackedScene" uid="uid://cym3qgnidu2m5" path="res://scenes/ui/stats_container/stats_container.tscn" id="2_l8hix"]
 [ext_resource type="Resource" uid="uid://cq7er2kamlyq5" path="res://resource/items/upgrades/data/block/upgrade_block_1.tres" id="3_evmld"]
+[ext_resource type="Resource" uid="uid://dfb3wse07omwa" path="res://resource/items/upgrades/data/block/upgrade_block_2.tres" id="4_pxejg"]
 [ext_resource type="Resource" uid="uid://biaq011pq1ukm" path="res://resource/items/upgrades/data/damage/upgrade_damage_1.tres" id="4_t2jfx"]
 [ext_resource type="Resource" uid="uid://cu5viu8xbg5og" path="res://resource/items/upgrades/data/harvesting/upgrade_harvesting_1.tres" id="5_cehub"]
+[ext_resource type="Resource" uid="uid://byrqx262e6wan" path="res://resource/items/upgrades/data/block/upgrade_block_3.tres" id="5_pry8i"]
+[ext_resource type="Resource" uid="uid://cds7xg77x4wty" path="res://resource/items/upgrades/data/block/upgrade_block_4.tres" id="6_6f4dd"]
 [ext_resource type="Resource" uid="uid://cbuds8b56hglq" path="res://resource/items/upgrades/data/health/upgrade_health_1.tres" id="6_078e8"]
 [ext_resource type="Resource" uid="uid://drfosxmrxpgxw" path="res://resource/items/upgrades/data/hp_regen/upgrade_hp_regen_1.tres" id="7_jevkw"]
 [ext_resource type="Resource" uid="uid://ort1ri6q7c8g" path="res://resource/items/upgrades/data/life_steal/upgrade_life_steal_1.tres" id="8_h4hr2"]
+[ext_resource type="Resource" uid="uid://ctlhmqewfrxpr" path="res://resource/items/upgrades/data/damage/upgrade_damage_2.tres" id="8_txcnb"]
+[ext_resource type="Resource" uid="uid://wnoe701kyq4" path="res://resource/items/upgrades/data/damage/upgrade_damage_3.tres" id="9_bed36"]
 [ext_resource type="Resource" uid="uid://cx7ii07il2cos" path="res://resource/items/upgrades/data/luck/upgrade_luck_3.tres" id="9_lndip"]
 [ext_resource type="Resource" uid="uid://udel7as6naiu" path="res://resource/items/upgrades/data/speed/upgrade_speed_4.tres" id="10_23ymm"]
+[ext_resource type="Resource" uid="uid://yboc50x678bn" path="res://resource/items/upgrades/data/damage/upgrade_damage_4.tres" id="10_bdwmh"]
+[ext_resource type="Resource" uid="uid://bdudgyce77g33" path="res://resource/items/upgrades/data/harvesting/upgrade_harvesting_2.tres" id="12_j2vin"]
+[ext_resource type="Resource" uid="uid://by64gujm14hb5" path="res://resource/items/upgrades/data/harvesting/upgrade_harvesting_3.tres" id="13_tnst5"]
+[ext_resource type="Resource" uid="uid://wa4fqvqat3pd" path="res://resource/items/upgrades/data/harvesting/upgrade_harvesting_4.tres" id="14_xajyw"]
+[ext_resource type="Resource" uid="uid://d3t02kpldm4qb" path="res://resource/items/upgrades/data/health/upgrade_health_2.tres" id="16_f8y75"]
+[ext_resource type="Resource" uid="uid://cdlxp33bunkg1" path="res://resource/items/upgrades/data/health/upgrade_health_3.tres" id="17_uyb6r"]
+[ext_resource type="Resource" uid="uid://bdbx7wbgvn5v5" path="res://resource/items/upgrades/data/health/upgrade_health_4.tres" id="18_fhii8"]
+[ext_resource type="Resource" uid="uid://4r43m6h54x3u" path="res://resource/items/upgrades/data/hp_regen/upgrade_hp_regen_2.tres" id="20_0tne3"]
+[ext_resource type="Resource" uid="uid://san0i6lij54x" path="res://resource/items/upgrades/data/hp_regen/upgrade_hp_regen_3.tres" id="21_es6ie"]
+[ext_resource type="Resource" uid="uid://br7d3vfcyw3m5" path="res://resource/items/upgrades/data/hp_regen/upgrade_hp_regen_4.tres" id="22_oekas"]
+[ext_resource type="Resource" uid="uid://qvop1fxgheup" path="res://resource/items/upgrades/data/life_steal/upgrade_life_steal_2.tres" id="24_k56t5"]
+[ext_resource type="Resource" uid="uid://dywp4da843b5s" path="res://resource/items/upgrades/data/life_steal/upgrade_life_steal_3.tres" id="25_l4p84"]
+[ext_resource type="Resource" uid="uid://cf2vastwlr8yg" path="res://resource/items/upgrades/data/life_steal/upgrade_life_steal_4.tres" id="26_625vb"]
+[ext_resource type="Resource" uid="uid://ludwb5hlqvsb" path="res://resource/items/upgrades/data/luck/upgrade_luck_1.tres" id="27_rm2kw"]
+[ext_resource type="Resource" uid="uid://348pw82c5hgv" path="res://resource/items/upgrades/data/luck/upgrade_luck_2.tres" id="28_kbsgn"]
+[ext_resource type="Resource" uid="uid://c26fub8mfy70j" path="res://resource/items/upgrades/data/luck/upgrade_luck_4.tres" id="30_a1b4m"]
+[ext_resource type="Resource" uid="uid://c5dot47fg7dmk" path="res://resource/items/upgrades/data/speed/upgrade_speed_1.tres" id="31_5ewdg"]
+[ext_resource type="Resource" uid="uid://uectfao7262s" path="res://resource/items/upgrades/data/speed/upgrade_speed_2.tres" id="32_u36xe"]
+[ext_resource type="Resource" uid="uid://6v13rxdjifyp" path="res://resource/items/upgrades/data/speed/upgrade_speed_3.tres" id="33_8rmpg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vxs30"]
 font_size = 100
@@ -24,7 +48,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l8hix")
-upgrade_list = Array[ExtResource("2_aghkh")]([ExtResource("3_evmld"), ExtResource("4_t2jfx"), ExtResource("5_cehub"), ExtResource("6_078e8"), ExtResource("7_jevkw"), ExtResource("8_h4hr2"), ExtResource("9_lndip"), ExtResource("10_23ymm")])
+upgrade_list = Array[ExtResource("2_aghkh")]([ExtResource("3_evmld"), ExtResource("4_pxejg"), ExtResource("5_pry8i"), ExtResource("6_6f4dd"), ExtResource("4_t2jfx"), ExtResource("8_txcnb"), ExtResource("9_bed36"), ExtResource("10_bdwmh"), ExtResource("5_cehub"), ExtResource("12_j2vin"), ExtResource("13_tnst5"), ExtResource("14_xajyw"), ExtResource("6_078e8"), ExtResource("16_f8y75"), ExtResource("17_uyb6r"), ExtResource("18_fhii8"), ExtResource("7_jevkw"), ExtResource("20_0tne3"), ExtResource("21_es6ie"), ExtResource("22_oekas"), ExtResource("8_h4hr2"), ExtResource("24_k56t5"), ExtResource("25_l4p84"), ExtResource("26_625vb"), ExtResource("27_rm2kw"), ExtResource("28_kbsgn"), ExtResource("9_lndip"), ExtResource("30_a1b4m"), ExtResource("31_5ewdg"), ExtResource("32_u36xe"), ExtResource("33_8rmpg"), ExtResource("10_23ymm")])
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=742400545]
 layout_mode = 1

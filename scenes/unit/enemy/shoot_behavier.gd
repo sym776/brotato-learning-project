@@ -57,11 +57,3 @@ func create_projectile(delta:float) -> void:
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	

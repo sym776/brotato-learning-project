@@ -81,3 +81,42 @@ func calculate_tier_probability(current_wave: int, config: Dictionary) -> Array[
 		max(0.0, epic_chance),
 		max(0.0, legendary_chance)
 	]
+
+func select_item_for_offer(item_pool: Array, current_wave:int, config:Dictionary) -> Array:#选出提供选择的升级项
+	
+	#计算各个等级出现的概率
+	var tier_chances : Array[float] = calculate_tier_probability(current_wave, config)
+	#举例[legendary: 1%, epic: 4%, rare: 20%, common: 75%]
+	var legendary_limit: float = tier_chances[3]#1%
+	var epic_limit: float = legendary_limit + tier_chances[2]#5%
+	var rare_limit: float = epic_limit + tier_chances[1]#25%
+
+	var offerred_items: Array = [] #数组，存放4个upgradecard的等级index
+	while offerred_items.size() < 4:
+		var roll: float = randf() #随即结果
+		var chosen_tier_index :int = 0 #当前card的等级index
+		if roll < legendary_limit:
+			chosen_tier_index = 3
+		elif  roll < epic_limit:
+			chosen_tier_index = 2
+		elif roll < rare_limit:
+			chosen_tier_index = 1
+
+		var potential_items:Array =[]#定义备选池
+		var current_search_tier_index: int = chosen_tier_index
+		while potential_items.is_empty() and current_search_tier_index >=0:#只要为空并且等级大于等于common就执行
+			#往备选池中传入item_pool筛选后的与当前card等级index相同的升级项
+			potential_items = item_pool.filter(func(item:ItemBase): return item.item_tier == current_search_tier_index)
+			
+			if potential_items.is_empty():#只要为空就等级下降一级
+				current_search_tier_index -= 1
+			else:
+				break
+		
+		if not potential_items.is_empty():#若备选池中不为空
+			var selected_item = potential_items.pick_random() #从备选池里随机选出一个升级项
+			
+			if not offerred_items.has(selected_item):#若数组中无该升级项，则添加进数组
+				offerred_items.append(selected_item)
+	
+	return offerred_items

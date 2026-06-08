@@ -16,7 +16,7 @@ enum SpawnType{
 @export var min_spawn_time:float = 1.0 #随机方式的最小时间   
 @export var max_spawn_time:float = 2.0 #随机方式的最大时间
 
-func get_random_unit_scene() -> PackedScene: #
+func get_random_unit_scene() -> PackedScene: #按权重随机生成怪
 	if units.is_empty():
 		printerr("No Units.")
 		return null
@@ -29,7 +29,7 @@ func get_random_unit_scene() -> PackedScene: #
 		weights.append(unit.weight)
 	
 	var rng:= RandomNumberGenerator.new()
-	var random_unit: PackedScene = enemies[rng.rand_weighted(weights)]
+	var random_unit: PackedScene = enemies[rng.rand_weighted(weights)]#按照权重随机在怪物场景数组中生成怪
 	return random_unit
 
 func is_valid_index(index: int) -> bool: #是否有效索引

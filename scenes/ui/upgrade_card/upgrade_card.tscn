@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://l56m7c7fhvsq"]
 
 [ext_resource type="Script" uid="uid://cwrdtrr4jr3rb" path="res://scenes/ui/upgrade_card/upgrade_card.gd" id="1_mkexl"]
-[ext_resource type="StyleBox" uid="uid://jj680qjt1gsk" path="res://styles/common_style.tres" id="1_v41mk"]
+[ext_resource type="StyleBox" uid="uid://d0xj23i5a6m81" path="res://styles/legendary_style.tres" id="1_v41mk"]
 [ext_resource type="Texture2D" uid="uid://dn68qq5evmvwa" path="res://assets/sprites/Upgrades/12.png" id="2_p145h"]
 [ext_resource type="PackedScene" uid="uid://dfode22cresnk" path="res://scenes/ui/custom_button/custom_button.tscn" id="3_p145h"]
 

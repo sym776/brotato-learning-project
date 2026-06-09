@@ -7,14 +7,12 @@ const UPGRADE_CARD_SCENE = preload("uid://l56m7c7fhvsq")
 
 @onready var items_container: HBoxContainer = %ItemsContainer
 
-
-
 func load_upgrades(current_wave: int) -> void:
-	for child in items_container.get_children():
+	for child in items_container.get_children():#清空所有上次的UpgradeCard
 		child.queue_free()
 		
-	var config:	Dictionary = Global.UPGRADE_PROBILITY_CONFIG
-	
+	var config:	Dictionary = Global.UPGRADE_PROBILITY_CONFIG#加载升级等级对应概率的字典
+	#选出呈现的UpgradeCard
 	var selected_upgrade: Array = Global.select_item_for_offer(upgrade_list, current_wave, config )
 		
 	for random_upg: ItemUpgrade in selected_upgrade:

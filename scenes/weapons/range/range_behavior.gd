@@ -15,7 +15,7 @@ func execute_attack() -> void:
 	tween.tween_property(weapon.sprite, "position", recoil_position, weapon.data.stats.recoil_duration)
 	var recoil_degree: float = -45.0
 	tween.parallel().tween_property(weapon.sprite, "rotation_degrees", recoil_degree, weapon.data.stats.recoil_duration)
-	
+	apply_life_steal()
 	tween.tween_property(weapon.sprite, "position", weapon.atk_start_pos, weapon.data.stats.back_duration)
 	tween.parallel().tween_property(weapon.sprite, "rotation_degrees", 0, weapon.data.stats.back_duration)
 	

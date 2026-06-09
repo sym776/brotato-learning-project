@@ -88,5 +88,6 @@ func _on_wave_timer_timeout() -> void:
 	on_wave_completed.emit()
 	spawn_timer.stop()
 	clear_enemies()
+	Global.get_harvesting_coins()
 	Global.game_paused = true
 	updata_enemies_new_wave()

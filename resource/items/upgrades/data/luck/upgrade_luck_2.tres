@@ -10,5 +10,6 @@ description = "+2"
 stat_id = "luck"
 item_name = "Luck"
 item_icon = ExtResource("1_ceph4")
+item_tier = 1
 item_type = 1
 metadata/_custom_type_script = "uid://335nxtqsgwdr"

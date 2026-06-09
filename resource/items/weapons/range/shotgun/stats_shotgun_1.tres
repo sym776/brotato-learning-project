@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("2_jaguu")
+damage = 0.5
 cooldown = 1.5
 max_range = 250.0
 knockback = 1.0

@@ -17,8 +17,8 @@ func _ready() -> void:
 	Global.player = player #引入全局player
 	Global.on_create_block_text.connect(_on_create_block_text)#接收全局创建格挡文本信号
 	Global.on_create_damage_text.connect(_on_create_damage_text)#接收全局创建伤害文本信号
-	Global.on_upgrade_selected.connect(_on_upgrade_selected)
-	Global.on_create_heal_text.connect(_on_create_heal_text)
+	Global.on_upgrade_selected.connect(_on_upgrade_selected)#接收全局创建伤害文本信号
+	Global.on_create_heal_text.connect(_on_create_heal_text)#接收全局创建治疗文本信号
 	
 	spawner.start_wave()
 
@@ -66,5 +66,4 @@ func _on_upgrade_selected() -> void:
 func _on_spawner_on_wave_completed() -> void:
 	if not Global.player:return
 	await get_tree().create_timer(1.0).timeout
-	upgrade_panel.load_upgrades(spawner.wave_index)
 	show_upgrades() 

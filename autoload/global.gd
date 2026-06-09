@@ -13,10 +13,16 @@ const FLASH_MATERIAL = preload("uid://bsox2vug0w1ya")
 #预加载float_text.tscn模板
 const FLOATING_TEXT_SCENE = preload("uid://dam2weobfqirr")
 
+const COMMON_STYLE = preload("uid://jj680qjt1gsk")
+const RARE_STYLE = preload("uid://j0xfyaq8pm16")
+const EPIC_STYLE = preload("uid://dh2fxrrya5ids")
+const LEGENDARY_STYLE = preload("uid://d0xj23i5a6m81")
+
+
 const UPGRADE_PROBILITY_CONFIG = {
 	"rare" = {"start_wave": 2, "base_multi": 0.06},
 	"epic" = {"start_wave": 4, "base_multi": 0.02},
-	"legendary" = {"start_wave": 7, "base_multi": 0.002}
+	"legendary" = {"start_wave": 7, "base_multi": 0.008}
 }
 
 enum UpgradeTier{
@@ -28,7 +34,12 @@ enum UpgradeTier{
 
 var player:Player
 
+var coin: int
+
 var game_paused:bool = false
+
+func get_harvesting_coins() -> void:
+	coin += player.stats.harvesting
 
 #定义判断概率（格挡\暴击）是否成功的方法
 func get_chance_success(chance: float) -> bool:
@@ -36,6 +47,17 @@ func get_chance_success(chance: float) -> bool:
 	if chance > random:
 		return true
 	return false
+
+func get_tier_style(tier: UpgradeTier) -> StyleBoxFlat:
+	match tier:
+		UpgradeTier.COMMON:
+			return COMMON_STYLE
+		UpgradeTier.RARE:
+			return RARE_STYLE
+		UpgradeTier.EPIC:
+			return EPIC_STYLE
+		_:
+			return LEGENDARY_STYLE		
 
 #计算升级等级出现概率
 func calculate_tier_probability(current_wave: int, config: Dictionary) -> Array[float]:
@@ -51,7 +73,7 @@ func calculate_tier_probability(current_wave: int, config: Dictionary) -> Array[
 	if current_wave >= config.epic.start_wave:#从第4波开始计算史诗升级出现概率
 		epic_chance = min(1 , (current_wave - 3) * config.epic.base_multi)
 	
-	if current_wave >= config.legendary.start_wave:#从第7波开始计算chuanshuo1传说升级出现概率
+	if current_wave >= config.legendary.start_wave:#从第7波开始计算传说升级出现概率
 		legendary_chance = min(1 , (current_wave - 6) * config.legendary.base_multi)
 
 #幸运因子

@@ -5,10 +5,11 @@
 
 [resource]
 script = ExtResource("2_ghvl3")
-value = 1.0
-description = "+1"
+value = 2.0
+description = "+2"
 stat_id = "hp_regen"
 item_name = "HP_Regen"
 item_icon = ExtResource("1_hpqvr")
+item_tier = 1
 item_type = 1
 metadata/_custom_type_script = "uid://335nxtqsgwdr"

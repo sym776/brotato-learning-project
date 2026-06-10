@@ -37,16 +37,19 @@
 [ext_resource type="Resource" uid="uid://uectfao7262s" path="res://resource/items/upgrades/data/speed/upgrade_speed_2.tres" id="32_u36xe"]
 [ext_resource type="Resource" uid="uid://6v13rxdjifyp" path="res://resource/items/upgrades/data/speed/upgrade_speed_3.tres" id="33_8rmpg"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxejg"]
+bg_color = Color(0.20392157, 0.20392157, 0.20392157, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_vxs30"]
 font_size = 100
 
 [node name="UpgradePanel" type="Panel" unique_id=1108552227]
-self_modulate = Color(0.2734375, 0.2734375, 0.2734375, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pxejg")
 script = ExtResource("1_l8hix")
 upgrade_list = Array[ExtResource("2_aghkh")]([ExtResource("3_evmld"), ExtResource("4_pxejg"), ExtResource("5_pry8i"), ExtResource("6_6f4dd"), ExtResource("4_t2jfx"), ExtResource("8_txcnb"), ExtResource("9_bed36"), ExtResource("10_bdwmh"), ExtResource("5_cehub"), ExtResource("12_j2vin"), ExtResource("13_tnst5"), ExtResource("14_xajyw"), ExtResource("6_078e8"), ExtResource("16_f8y75"), ExtResource("17_uyb6r"), ExtResource("18_fhii8"), ExtResource("7_jevkw"), ExtResource("20_0tne3"), ExtResource("21_es6ie"), ExtResource("22_oekas"), ExtResource("8_h4hr2"), ExtResource("24_k56t5"), ExtResource("25_l4p84"), ExtResource("26_625vb"), ExtResource("27_rm2kw"), ExtResource("28_kbsgn"), ExtResource("9_lndip"), ExtResource("30_a1b4m"), ExtResource("31_5ewdg"), ExtResource("32_u36xe"), ExtResource("33_8rmpg"), ExtResource("10_23ymm")])
 
@@ -65,11 +68,14 @@ alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1322442110]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/separation = 64
 alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1366317566]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
 text = "wave complete"
 label_settings = SubResource("LabelSettings_vxs30")
 horizontal_alignment = 1
@@ -79,19 +85,15 @@ unique_name_in_owner = true
 layout_mode = 2
 
 [node name="UpgradeCard" parent="MarginContainer/HBoxContainer/VBoxContainer/ItemsContainer" unique_id=1165006552 instance=ExtResource("1_52meh")]
-visible = false
 layout_mode = 2
 
 [node name="UpgradeCard2" parent="MarginContainer/HBoxContainer/VBoxContainer/ItemsContainer" unique_id=1356149528 instance=ExtResource("1_52meh")]
-visible = false
 layout_mode = 2
 
 [node name="UpgradeCard3" parent="MarginContainer/HBoxContainer/VBoxContainer/ItemsContainer" unique_id=1972417628 instance=ExtResource("1_52meh")]
-visible = false
 layout_mode = 2
 
 [node name="UpgradeCard4" parent="MarginContainer/HBoxContainer/VBoxContainer/ItemsContainer" unique_id=1970548312 instance=ExtResource("1_52meh")]
-visible = false
 layout_mode = 2
 
 [node name="StatsContainer" parent="MarginContainer/HBoxContainer" unique_id=1431799386 instance=ExtResource("2_l8hix")]

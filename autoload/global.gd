@@ -59,7 +59,7 @@ func get_tier_style(tier: UpgradeTier) -> StyleBoxFlat:
 		_:
 			return LEGENDARY_STYLE		
 
-#计算升级等级出现概率
+#计算upgradecard中各等级出现概率
 func calculate_tier_probability(current_wave: int, config: Dictionary) -> Array[float]:
 	var common_chance: float = 0.0
 	var rare_chance: float = 0.0
@@ -115,7 +115,7 @@ func select_item_for_offer(item_pool: Array, current_wave:int, config:Dictionary
 
 	var offerred_items: Array = [] #数组，存放4个upgradecard的等级index
 	while offerred_items.size() < 4:
-		var roll: float = randf() #随即结果
+		var roll: float = randf() #随机结果
 		var chosen_tier_index :int = 0 #当前card的等级index
 		if roll < legendary_limit:
 			chosen_tier_index = 3

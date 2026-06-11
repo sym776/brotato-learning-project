@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dftikpscnrc1w"]
 
-[ext_resource type="Script" uid="uid://y7trihnahh81" path="res://shop_panel.gd" id="1_3b8rw"]
-[ext_resource type="PackedScene" uid="uid://bo326xyyxukqq" path="res://scenes/ui/shop_card/shop_card.tscn" id="2_qecyp"]
-[ext_resource type="PackedScene" uid="uid://cym3qgnidu2m5" path="res://scenes/ui/stats_container/stats_container.tscn" id="3_sjk1b"]
+[ext_resource type="Script" uid="uid://y7trihnahh81" path="res://scenes/ui/shop_panel/shop_panel.gd" id="1_uw7t7"]
+[ext_resource type="PackedScene" uid="uid://bo326xyyxukqq" path="res://scenes/ui/shop_card/shop_card.tscn" id="2_whl1y"]
+[ext_resource type="PackedScene" uid="uid://cym3qgnidu2m5" path="res://scenes/ui/stats_container/stats_container.tscn" id="3_o7w7v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b8rw"]
 bg_color = Color(0.20392157, 0.20392157, 0.20392157, 1)
@@ -42,7 +42,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_3b8rw")
-script = ExtResource("1_3b8rw")
+script = ExtResource("1_uw7t7")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=707092764]
 layout_mode = 1
@@ -81,19 +81,19 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 16
 
-[node name="ShopCard" parent="MarginContainer/Control/ItemContainer" unique_id=1014558108 instance=ExtResource("2_qecyp")]
+[node name="ShopCard" parent="MarginContainer/Control/ItemContainer" unique_id=1014558108 instance=ExtResource("2_whl1y")]
 layout_mode = 2
 
-[node name="ShopCard2" parent="MarginContainer/Control/ItemContainer" unique_id=1444930285 instance=ExtResource("2_qecyp")]
+[node name="ShopCard2" parent="MarginContainer/Control/ItemContainer" unique_id=1444930285 instance=ExtResource("2_whl1y")]
 layout_mode = 2
 
-[node name="ShopCard3" parent="MarginContainer/Control/ItemContainer" unique_id=1835684100 instance=ExtResource("2_qecyp")]
+[node name="ShopCard3" parent="MarginContainer/Control/ItemContainer" unique_id=1835684100 instance=ExtResource("2_whl1y")]
 layout_mode = 2
 
-[node name="ShopCard4" parent="MarginContainer/Control/ItemContainer" unique_id=1879941411 instance=ExtResource("2_qecyp")]
+[node name="ShopCard4" parent="MarginContainer/Control/ItemContainer" unique_id=1879941411 instance=ExtResource("2_whl1y")]
 layout_mode = 2
 
-[node name="StatsContainer" parent="MarginContainer/Control" unique_id=1431799386 instance=ExtResource("3_sjk1b")]
+[node name="StatsContainer" parent="MarginContainer/Control" unique_id=1431799386 instance=ExtResource("3_o7w7v")]
 layout_mode = 0
 offset_left = 1373.0
 offset_top = 22.0

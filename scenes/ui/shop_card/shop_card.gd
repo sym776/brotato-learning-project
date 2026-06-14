@@ -14,6 +14,8 @@ func _set_shop_item(value:ItemBase) -> void:
 	shop_item = value
 	item_icon.texture = value.item_icon
 	item_name.text = value.item_name
-	item_type.text = ItemBase.ItemType.keys()[value.item_type]
-	#未完
+	item_type.text = ItemBase.ItemType.keys()[value.item_type]#value.item_type值为int类型
+	item_description.text = value.get_description()
+	coins_label.text = str(value.item_cost)#unfinished
+	
 	

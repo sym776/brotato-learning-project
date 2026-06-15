@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ccq288w6ddarl" path="res://scenes/weapons/range/weapon_shotgun.tscn" id="1_db8mu"]
 [ext_resource type="Script" uid="uid://cxe1a38cly3m2" path="res://resource/items/weapons/item_weapon.gd" id="1_tavk7"]
+[ext_resource type="Texture2D" uid="uid://dx2oqsohwycoa" path="res://assets/sprites/Weapons/Icons/weapon_shotgun_icon.png" id="1_y3n3o"]
 [ext_resource type="Resource" uid="uid://rxgm6tpbitwk" path="res://resource/items/weapons/range/shotgun/stats_shotgun_4.tres" id="3_y3n3o"]
 
 [resource]
@@ -9,4 +10,8 @@ script = ExtResource("1_tavk7")
 type = 1
 scene = ExtResource("1_db8mu")
 stats = ExtResource("3_y3n3o")
+item_name = "shotgun4"
+item_icon = ExtResource("1_y3n3o")
+item_tier = 3
+item_cost = 40
 metadata/_custom_type_script = "uid://cxe1a38cly3m2"

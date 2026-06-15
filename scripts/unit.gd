@@ -3,6 +3,7 @@ class_name Unit
 
 #导出需要引用的资源库
 @export var stats: UnitStats
+
 @onready var visuals: Node2D = %Visuals
 @onready var sprite: Sprite2D = %Sprite
 @onready var animation_player: AnimationPlayer = $AnimationPlayer

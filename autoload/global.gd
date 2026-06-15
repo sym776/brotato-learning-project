@@ -32,6 +32,12 @@ enum UpgradeTier{
 	LEGENDARY
 }
 
+const SHOP_PROBILITY_CONFIG = {
+	"rare" = {"start_wave": 2, "base_multi": 0.1},
+	"epic" = {"start_wave": 4, "base_multi": 0.06},
+	"legendary" = {"start_wave": 7, "base_multi": 0.01}
+}
+
 var player:Player
 
 var coin: int
@@ -113,7 +119,7 @@ func select_item_for_offer(item_pool: Array, current_wave:int, config:Dictionary
 	var epic_limit: float = legendary_limit + tier_chances[2]#5%
 	var rare_limit: float = epic_limit + tier_chances[1]#25%
 
-	var offerred_items: Array = [] #数组，存放4个upgradecard的等级index
+	var offerred_items: Array = [] #数组，存放4个shopcard & upgradecard的等级index
 	while offerred_items.size() < 4:
 		var roll: float = randf() #随机结果
 		var chosen_tier_index :int = 0 #当前card的等级index

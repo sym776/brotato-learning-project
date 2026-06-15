@@ -5,12 +5,14 @@ class_name Arena
 @export var normal_color: Color #普通颜色
 @export var blocked_color: Color #格挡颜色
 @export var critical_color: Color #暴击颜色
-@export var hp_color: Color #
+@export var hp_color: Color 
 
 @onready var wave_index_label: Label = %WaveIndexLabel
 @onready var wave_time_label: Label = %WaveTimeLabel
 @onready var spawner: Spawner = $Spawner
-@onready var upgrade_panel: UpgradePanel = $GameUI/UpgradePanel
+
+@onready var upgrade_panel: UpgradePanel = %UpgradePanel
+@onready var shop_panel: ShopPanel = %ShopPanel
 
 
 func _ready() -> void:
@@ -21,7 +23,8 @@ func _ready() -> void:
 	Global.on_create_heal_text.connect(_on_create_heal_text)#接收全局创建治疗文本信号
 	
 	spawner.start_wave()
-
+	shop_panel.load_shop(9)
+	
 func _process(delta: float) -> void:
 	if Global.game_paused: return #如果游戏暂停，则循环暂停
 	wave_index_label.text = spawner.get_wave_text()

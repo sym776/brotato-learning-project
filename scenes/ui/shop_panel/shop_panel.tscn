@@ -294,7 +294,7 @@ offset_right = 1799.0
 offset_bottom = 938.0
 theme_override_constants/separation = 32
 
-[node name="Button" type="Button" parent="MarginContainer/Control/VBoxContainer" unique_id=620058419]
+[node name="NextWave" type="Button" parent="MarginContainer/Control/VBoxContainer" unique_id=620058419]
 custom_minimum_size = Vector2(300, 90)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -302,7 +302,7 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_sjk1b")
 text = "next wave"
 
-[node name="Button2" type="Button" parent="MarginContainer/Control/VBoxContainer" unique_id=722853322]
+[node name="Combine" type="Button" parent="MarginContainer/Control/VBoxContainer" unique_id=722853322]
 custom_minimum_size = Vector2(300, 90)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -310,10 +310,12 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_j21la")
 text = "combine"
 
-[node name="Button3" type="Button" parent="MarginContainer/Control/VBoxContainer" unique_id=1098228663]
+[node name="Sell" type="Button" parent="MarginContainer/Control/VBoxContainer" unique_id=1098228663]
 custom_minimum_size = Vector2(300, 90)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_qeixu")
 text = "sell"
+
+[connection signal="pressed" from="MarginContainer/Control/VBoxContainer/NextWave" to="." method="_on_next_wave_pressed"]

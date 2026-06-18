@@ -64,9 +64,14 @@ func _on_create_heal_text(unit:Node2D, heal_value:float) -> void:
 	
 func _on_upgrade_selected() -> void:
 	upgrade_panel.hide()
-	start_new_wave()
+	shop_panel.load_shop(spawner.wave_index)
+	shop_panel.show()
 
 func _on_spawner_on_wave_completed() -> void:
 	if not Global.player:return
 	await get_tree().create_timer(1.0).timeout
 	show_upgrades() 
+
+func _on_shop_panel__on_shop_next_wave() -> void:
+	shop_panel.hide()
+	start_new_wave()

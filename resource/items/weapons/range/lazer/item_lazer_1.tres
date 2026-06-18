@@ -12,6 +12,6 @@ type = 1
 scene = ExtResource("2_grfv1")
 stats = ExtResource("4_2s24y")
 upgrade_to = ExtResource("5_8lkif")
-item_name = "Lazer1"
+item_name = "LazerⅠ"
 item_icon = ExtResource("1_7rmg5")
 metadata/_custom_type_script = "uid://cxe1a38cly3m2"

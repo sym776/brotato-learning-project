@@ -3,6 +3,8 @@ class_name ShopPanel
 
 const SHOP_CARD_SCENE = preload("uid://bo326xyyxukqq")
 
+signal _on_shop_next_wave
+
 @export var shop_list: Array[ItemBase]
 
 @onready var item_container: HBoxContainer = %ItemContainer
@@ -22,4 +24,6 @@ func load_shop(current_wave: int) -> void:
 		var card_instance:= SHOP_CARD_SCENE.instantiate() as ShopCard
 		item_container.add_child(card_instance)
 		card_instance.shop_item = shop_item
-	
+
+func _on_next_wave_pressed() -> void:
+	_on_shop_next_wave.emit()

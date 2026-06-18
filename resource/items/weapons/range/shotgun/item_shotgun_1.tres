@@ -12,6 +12,6 @@ type = 1
 scene = ExtResource("2_73vf3")
 stats = ExtResource("4_oa2ur")
 upgrade_to = ExtResource("5_b7b80")
-item_name = "Shotgun1"
+item_name = "ShotgunⅠ"
 item_icon = ExtResource("1_31neu")
 metadata/_custom_type_script = "uid://cxe1a38cly3m2"

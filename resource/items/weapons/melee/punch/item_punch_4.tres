@@ -9,7 +9,7 @@
 script = ExtResource("2_qwejt")
 scene = ExtResource("2_83lbd")
 stats = ExtResource("3_pxj5v")
-item_name = "Punch 1"
+item_name = "Punch Ⅳ"
 item_icon = ExtResource("1_pxj5v")
 item_tier = 3
 item_cost = 75

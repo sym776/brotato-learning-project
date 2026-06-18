@@ -72,6 +72,7 @@ offset_left = 118.0
 offset_top = 52.0
 offset_right = 252.0
 offset_bottom = 132.0
+theme_override_font_sizes/font_size = 16
 text = "item type"
 label_settings = SubResource("LabelSettings_h66gf")
 
@@ -80,12 +81,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -45.0
+offset_top = -78.0
 offset_right = 375.0
-offset_bottom = 45.0
+offset_bottom = 142.47882
 grow_vertical = 2
 scale = Vector2(0.99665123, 1.0023637)
 theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
 text = "Description"
 
 [node name="BuyButton" parent="MarginContainer/Control" unique_id=758673877 instance=ExtResource("4_7csgf")]

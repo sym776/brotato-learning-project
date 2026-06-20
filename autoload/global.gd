@@ -8,10 +8,13 @@ signal on_create_heal_text(unit: Node2D, heal: float)
 
 signal on_upgrade_selected #升级选择信号
 
+signal on_enemy_died(enemy: Enemy) #敌人死亡信号
+
 #定义受击发光材质常量，预加载
 const FLASH_MATERIAL = preload("uid://bsox2vug0w1ya")
 #预加载float_text.tscn模板
 const FLOATING_TEXT_SCENE = preload("uid://dam2weobfqirr")
+const COIN_SCENE = preload("uid://jagdd43dkppx")
 
 const COMMON_STYLE = preload("uid://jj680qjt1gsk")
 const RARE_STYLE = preload("uid://j0xfyaq8pm16")

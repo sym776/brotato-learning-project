@@ -11,7 +11,7 @@ script = ExtResource("4_e15k4")
 name = "enemy_slow"
 type = 1
 icon = ExtResource("2_oo7ju")
-health = 30
+health = 3
 health_increase_per_wave = 1.5
 damage = 2.0
 speed = 250.0
@@ -81,4 +81,5 @@ fill_color = Color(1, 0.2890625, 0.46679688, 1)
 wait_time = 0.4
 one_shot = true
 
+[connection signal="on_unit_died" from="HealthComponent" to="." method="_on_health_component_on_unit_died"]
 [connection signal="timeout" from="KnockbackTimer" to="." method="_on_knockback_timer_timeout"]

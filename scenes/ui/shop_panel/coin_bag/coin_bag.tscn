@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bfkgjpshgv7cm"]
+
+[ext_resource type="Script" uid="uid://dhw4kt3bpn3ky" path="res://scenes/ui/shop_panel/coin_bag/coin_bag.gd" id="1_epmh3"]
+[ext_resource type="Texture2D" uid="uid://chm4srsn6xd8y" path="res://assets/sprites/Gold/gold_1.png" id="2_kdggl"]
+
+[node name="CoinBag" type="HBoxContainer" unique_id=1046107379]
+offset_right = 131.0
+offset_bottom = 64.0
+size_flags_horizontal = 0
+theme_override_constants/separation = 10
+script = ExtResource("1_epmh3")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=311978659]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_kdggl")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CoinNum" type="Label" parent="." unique_id=2056359010]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "23"

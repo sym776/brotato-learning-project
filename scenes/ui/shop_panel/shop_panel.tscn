@@ -28,6 +28,7 @@
 [ext_resource type="Resource" uid="uid://fcqo840k2453" path="res://resource/items/weapons/range/lazer/item_lazer_2.tres" id="24_kche8"]
 [ext_resource type="Resource" uid="uid://cf55okt1o6bhi" path="res://resource/items/weapons/range/lazer/item_lazer_3.tres" id="25_rqkor"]
 [ext_resource type="Resource" uid="uid://bsdctu6genxm1" path="res://resource/items/weapons/range/lazer/item_lazer_4.tres" id="26_xnsbf"]
+[ext_resource type="PackedScene" uid="uid://bfkgjpshgv7cm" path="res://scenes/ui/shop_panel/coin_bag/coin_bag.tscn" id="29_00wmq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b8rw"]
 bg_color = Color(0.20392157, 0.20392157, 0.20392157, 1)
@@ -317,5 +318,11 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_qeixu")
 text = "sell"
+
+[node name="CoinBag" parent="MarginContainer/Control" unique_id=1046107379 instance=ExtResource("29_00wmq")]
+layout_mode = 0
+offset_right = -1736.9998
+offset_bottom = -904.0
+theme_override_constants/separation = 10
 
 [connection signal="pressed" from="MarginContainer/Control/VBoxContainer/NextWave" to="." method="_on_next_wave_pressed"]

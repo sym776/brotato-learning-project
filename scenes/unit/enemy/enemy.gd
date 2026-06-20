@@ -92,11 +92,5 @@ func _on_hurtbox_component_on_damaged(hitbox: HitboxComponent) -> void:
 		var dir : Vector2 = hitbox.source.global_position.direction_to(global_position)
 		apply_knockback(dir, hitbox.knockback_power)
 	
-	
-	
-	
-	
-	
-	
-	
-	
+func _on_health_component_on_unit_died() -> void:
+	Global.on_enemy_died.emit(self)

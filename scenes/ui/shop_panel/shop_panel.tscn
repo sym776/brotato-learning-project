@@ -28,7 +28,8 @@
 [ext_resource type="Resource" uid="uid://fcqo840k2453" path="res://resource/items/weapons/range/lazer/item_lazer_2.tres" id="24_kche8"]
 [ext_resource type="Resource" uid="uid://cf55okt1o6bhi" path="res://resource/items/weapons/range/lazer/item_lazer_3.tres" id="25_rqkor"]
 [ext_resource type="Resource" uid="uid://bsdctu6genxm1" path="res://resource/items/weapons/range/lazer/item_lazer_4.tres" id="26_xnsbf"]
-[ext_resource type="PackedScene" uid="uid://bfkgjpshgv7cm" path="res://scenes/ui/shop_panel/coin_bag/coin_bag.tscn" id="29_00wmq"]
+[ext_resource type="PackedScene" uid="uid://bfkgjpshgv7cm" path="res://scenes/ui/coin_bag/coin_bag.tscn" id="29_00wmq"]
+[ext_resource type="PackedScene" uid="uid://cq0v7vji3nrvq" path="res://scenes/ui/shop_panel/item_card/item_card.tscn" id="29_bv4pr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b8rw"]
 bg_color = Color(0.20392157, 0.20392157, 0.20392157, 1)
@@ -152,10 +153,8 @@ theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 16
 columns = 8
 
-[node name="ItemCard" type="Button" parent="MarginContainer/Control/Passives/PassivesContainer" unique_id=432520518]
-custom_minimum_size = Vector2(100, 100)
+[node name="ItemCard" parent="MarginContainer/Control/Passives/PassivesContainer" unique_id=1985236121 instance=ExtResource("29_bv4pr")]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_qecyp")
 
 [node name="ItemCard2" type="Button" parent="MarginContainer/Control/Passives/PassivesContainer" unique_id=1093216254]
 custom_minimum_size = Vector2(100, 100)
@@ -323,6 +322,5 @@ text = "sell"
 layout_mode = 0
 offset_right = -1736.9998
 offset_bottom = -904.0
-theme_override_constants/separation = 10
 
-[connection signal="pressed" from="MarginContainer/Control/VBoxContainer/NextWave" to="." method="_on_next_wave_pressed"]
+[connection signal="pressed" from="MarginContainer/Control/VBoxContainer/NextWave" to="." method="_on_next_wave_button_pressed"]

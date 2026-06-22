@@ -1,7 +1,7 @@
 extends Panel
 class_name ShopCard
 
-signal _on_item_purchase(item: ItemBase)
+signal _on_item_purchased(item: ItemBase)
 
 @export var shop_item: ItemBase:set = _set_shop_item
 
@@ -20,7 +20,7 @@ func _set_shop_item(value:ItemBase) -> void:
 	item_name.text = value.item_name
 	item_type.text = ItemBase.ItemType.keys()[value.item_type]#value.item_type值为int类型
 	item_description.text = value.get_description()
-	coins_label.text = str(value.item_cost)#unfinished
+	coins_label.text = str(value.item_cost)
 	
 	var style:StyleBoxFlat = Global.get_tier_style(value.item_tier)
 	add_theme_stylebox_override("panel", style)
@@ -29,5 +29,5 @@ func _set_shop_item(value:ItemBase) -> void:
 func _on_buy_button_pressed() -> void:
 	if Global.coin >= shop_item.item_cost:
 		Global.coin -= shop_item.item_cost
-		_on_item_purchase.emit(shop_item)
+		_on_item_purchased.emit(shop_item)
 		queue_free()

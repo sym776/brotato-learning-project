@@ -15,6 +15,7 @@ const FLASH_MATERIAL = preload("uid://bsox2vug0w1ya")
 #预加载float_text.tscn模板
 const FLOATING_TEXT_SCENE = preload("uid://dam2weobfqirr")
 const COIN_SCENE = preload("uid://jagdd43dkppx")
+const ITEM_CARD_SCENE = preload("uid://cq0v7vji3nrvq")
 
 const COMMON_STYLE = preload("uid://jj680qjt1gsk")
 const RARE_STYLE = preload("uid://j0xfyaq8pm16")
@@ -46,6 +47,8 @@ var player:Player
 var coin: int
 
 var game_paused:bool = false
+
+var equipped_weapons: Array[ItemWeapon]
 
 func get_harvesting_coins() -> void:
 	coin += player.stats.harvesting

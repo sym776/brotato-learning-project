@@ -50,7 +50,7 @@ func _ready() -> void:
 	#add_weapon(preload("uid://6mkyu0sdbfre"))
 	
 	#item_shotgun_1.tres
-	add_weapon(preload("uid://ciuqxrem3maqc"))
+	#add_weapon(preload("uid://ciuqxrem3maqc"))
 	
 
 func _process(delta: float) -> void:

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cq0v7vji3nrvq"]
+
+[ext_resource type="Script" uid="uid://bw5w8xsu8s40b" path="res://scenes/ui/shop_panel/item_card/item_card.gd" id="1_0q24d"]
+[ext_resource type="Texture2D" uid="uid://cyh23wqn8vcac" path="res://assets/sprites/Weapons/Icons/weapon_punch_icon.png" id="2_713eq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qecyp"]
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="ItemCard" type="Button" unique_id=1985236121]
+custom_minimum_size = Vector2(100, 100)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qecyp")
+script = ExtResource("1_0q24d")
+
+[node name="ItemIcon" type="TextureRect" parent="." unique_id=1547100505]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_713eq")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

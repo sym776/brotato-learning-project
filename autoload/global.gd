@@ -44,9 +44,11 @@ const SHOP_PROBILITY_CONFIG = {
 
 var player:Player
 
-var coin: int
+var coin: int = 500
 
 var game_paused:bool = false
+
+var selected_weapon: ItemWeapon
 
 var equipped_weapons: Array[ItemWeapon]
 

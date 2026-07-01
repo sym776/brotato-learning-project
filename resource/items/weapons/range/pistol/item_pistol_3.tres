@@ -4,14 +4,14 @@
 [ext_resource type="Script" uid="uid://cxe1a38cly3m2" path="res://resource/items/weapons/item_weapon.gd" id="1_rrjq6"]
 [ext_resource type="PackedScene" uid="uid://biiii547s5kpl" path="res://scenes/weapons/range/weapon_pistol.tscn" id="2_nrfad"]
 [ext_resource type="Resource" uid="uid://cc7j7oa2a3gvg" path="res://resource/items/weapons/range/pistol/stats_pistol_3.tres" id="4_1wqgd"]
-[ext_resource type="Resource" uid="uid://dbdlriv48ilxr" path="res://resource/items/weapons/melee/punch/item_punch_4.tres" id="5_ife3q"]
+[ext_resource type="Resource" uid="uid://b1yf4pffwf3lj" path="res://resource/items/weapons/range/pistol/item_pistol_4.tres" id="5_1wqgd"]
 
 [resource]
 script = ExtResource("1_rrjq6")
 type = 1
 scene = ExtResource("2_nrfad")
 stats = ExtResource("4_1wqgd")
-upgrade_to = ExtResource("5_ife3q")
+upgrade_to = ExtResource("5_1wqgd")
 item_name = "PistolⅢ"
 item_icon = ExtResource("1_1wqgd")
 item_tier = 2

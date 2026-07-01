@@ -1,33 +1,33 @@
 [gd_scene format=3 uid="uid://dftikpscnrc1w"]
 
 [ext_resource type="Script" uid="uid://y7trihnahh81" path="res://scenes/ui/shop_panel/shop_panel.gd" id="1_uw7t7"]
-[ext_resource type="Script" uid="uid://bjsvgv2mtabr7" path="res://resource/items/item_base.gd" id="2_p5o8k"]
+[ext_resource type="Script" uid="uid://bjsvgv2mtabr7" path="res://resource/items/item_base.gd" id="2_bv4pr"]
 [ext_resource type="PackedScene" uid="uid://bo326xyyxukqq" path="res://scenes/ui/shop_card/shop_card.tscn" id="2_whl1y"]
-[ext_resource type="Resource" uid="uid://d1p4a2kxtrkbw" path="res://resource/items/weapons/melee/axe/item_axe_1.tres" id="3_00wmq"]
+[ext_resource type="Resource" uid="uid://d1p4a2kxtrkbw" path="res://resource/items/weapons/melee/axe/item_axe_1.tres" id="3_71wbh"]
 [ext_resource type="PackedScene" uid="uid://cym3qgnidu2m5" path="res://scenes/ui/stats_container/stats_container.tscn" id="3_o7w7v"]
-[ext_resource type="Resource" uid="uid://3p7o563vicqu" path="res://resource/items/weapons/melee/axe/item_axe_2.tres" id="4_bv4pr"]
-[ext_resource type="Resource" uid="uid://vjl1wghc8ri7" path="res://resource/items/weapons/melee/axe/item_axe_3.tres" id="5_71wbh"]
-[ext_resource type="Resource" uid="uid://cw4ynwqnmrub7" path="res://resource/items/weapons/melee/axe/item_axe_4.tres" id="6_x1eg0"]
-[ext_resource type="Resource" uid="uid://d3uwpo0qp78s1" path="res://resource/items/weapons/melee/punch/item_punch_1.tres" id="7_52puk"]
-[ext_resource type="Resource" uid="uid://c3ducan8uke3m" path="res://resource/items/weapons/melee/punch/item_punch_2.tres" id="8_jq2ca"]
-[ext_resource type="Resource" uid="uid://c7y1nhfnyryxa" path="res://resource/items/weapons/melee/punch/item_punch_3.tres" id="9_prg1f"]
-[ext_resource type="Resource" uid="uid://dbdlriv48ilxr" path="res://resource/items/weapons/melee/punch/item_punch_4.tres" id="10_e3siv"]
-[ext_resource type="Resource" uid="uid://crr38mnw5k8pj" path="res://resource/items/weapons/melee/sword/item_sword_1.tres" id="11_q46vk"]
-[ext_resource type="Resource" uid="uid://8yh3adxls5xs" path="res://resource/items/weapons/melee/sword/item_sword_2.tres" id="12_lpl7b"]
-[ext_resource type="Resource" uid="uid://dh8erwygiys5n" path="res://resource/items/weapons/melee/sword/item_sword_3.tres" id="13_b5t3w"]
-[ext_resource type="Resource" uid="uid://coaenqklhfkhb" path="res://resource/items/weapons/melee/sword/item_sword_4.tres" id="14_hf7qu"]
-[ext_resource type="Resource" uid="uid://lumdtum6ldkm" path="res://resource/items/weapons/range/pistol/item_pistol_1.tres" id="15_2i5hd"]
-[ext_resource type="Resource" uid="uid://bgf6rj2mjummr" path="res://resource/items/weapons/range/pistol/item_pistol_2.tres" id="16_erc4t"]
-[ext_resource type="Resource" uid="uid://dijbcyckp2qdx" path="res://resource/items/weapons/range/pistol/item_pistol_3.tres" id="17_6p1qk"]
-[ext_resource type="Resource" uid="uid://b1yf4pffwf3lj" path="res://resource/items/weapons/range/pistol/item_pistol_4.tres" id="18_b7v6k"]
-[ext_resource type="Resource" uid="uid://ciuqxrem3maqc" path="res://resource/items/weapons/range/shotgun/item_shotgun_1.tres" id="19_5vqfr"]
-[ext_resource type="Resource" uid="uid://chh0ic1webef5" path="res://resource/items/weapons/range/shotgun/item_shotgun_2.tres" id="20_3on2n"]
-[ext_resource type="Resource" uid="uid://c3jefr1d8lx82" path="res://resource/items/weapons/range/shotgun/item_shotgun_3.tres" id="21_1i2lc"]
-[ext_resource type="Resource" uid="uid://cnpxdmd4qd1bs" path="res://resource/items/weapons/range/shotgun/item_shotgun_4.tres" id="22_7w8xb"]
-[ext_resource type="Resource" uid="uid://6mkyu0sdbfre" path="res://resource/items/weapons/range/lazer/item_lazer_1.tres" id="23_pk1f0"]
-[ext_resource type="Resource" uid="uid://fcqo840k2453" path="res://resource/items/weapons/range/lazer/item_lazer_2.tres" id="24_kche8"]
-[ext_resource type="Resource" uid="uid://cf55okt1o6bhi" path="res://resource/items/weapons/range/lazer/item_lazer_3.tres" id="25_rqkor"]
-[ext_resource type="Resource" uid="uid://bsdctu6genxm1" path="res://resource/items/weapons/range/lazer/item_lazer_4.tres" id="26_xnsbf"]
+[ext_resource type="Resource" uid="uid://3p7o563vicqu" path="res://resource/items/weapons/melee/axe/item_axe_2.tres" id="4_x1eg0"]
+[ext_resource type="Resource" uid="uid://vjl1wghc8ri7" path="res://resource/items/weapons/melee/axe/item_axe_3.tres" id="5_52puk"]
+[ext_resource type="Resource" uid="uid://cw4ynwqnmrub7" path="res://resource/items/weapons/melee/axe/item_axe_4.tres" id="6_jq2ca"]
+[ext_resource type="Resource" uid="uid://d3uwpo0qp78s1" path="res://resource/items/weapons/melee/punch/item_punch_1.tres" id="7_prg1f"]
+[ext_resource type="Resource" uid="uid://c3ducan8uke3m" path="res://resource/items/weapons/melee/punch/item_punch_2.tres" id="8_e3siv"]
+[ext_resource type="Resource" uid="uid://c7y1nhfnyryxa" path="res://resource/items/weapons/melee/punch/item_punch_3.tres" id="9_q46vk"]
+[ext_resource type="Resource" uid="uid://dbdlriv48ilxr" path="res://resource/items/weapons/melee/punch/item_punch_4.tres" id="10_lpl7b"]
+[ext_resource type="Resource" uid="uid://crr38mnw5k8pj" path="res://resource/items/weapons/melee/sword/item_sword_1.tres" id="11_b5t3w"]
+[ext_resource type="Resource" uid="uid://8yh3adxls5xs" path="res://resource/items/weapons/melee/sword/item_sword_2.tres" id="12_hf7qu"]
+[ext_resource type="Resource" uid="uid://dh8erwygiys5n" path="res://resource/items/weapons/melee/sword/item_sword_3.tres" id="13_2i5hd"]
+[ext_resource type="Resource" uid="uid://coaenqklhfkhb" path="res://resource/items/weapons/melee/sword/item_sword_4.tres" id="14_erc4t"]
+[ext_resource type="Resource" uid="uid://6mkyu0sdbfre" path="res://resource/items/weapons/range/lazer/item_lazer_1.tres" id="15_6p1qk"]
+[ext_resource type="Resource" uid="uid://fcqo840k2453" path="res://resource/items/weapons/range/lazer/item_lazer_2.tres" id="16_b7v6k"]
+[ext_resource type="Resource" uid="uid://cf55okt1o6bhi" path="res://resource/items/weapons/range/lazer/item_lazer_3.tres" id="17_5vqfr"]
+[ext_resource type="Resource" uid="uid://bsdctu6genxm1" path="res://resource/items/weapons/range/lazer/item_lazer_4.tres" id="18_3on2n"]
+[ext_resource type="Resource" uid="uid://lumdtum6ldkm" path="res://resource/items/weapons/range/pistol/item_pistol_1.tres" id="19_1i2lc"]
+[ext_resource type="Resource" uid="uid://bgf6rj2mjummr" path="res://resource/items/weapons/range/pistol/item_pistol_2.tres" id="20_7w8xb"]
+[ext_resource type="Resource" uid="uid://dijbcyckp2qdx" path="res://resource/items/weapons/range/pistol/item_pistol_3.tres" id="21_pk1f0"]
+[ext_resource type="Resource" uid="uid://b1yf4pffwf3lj" path="res://resource/items/weapons/range/pistol/item_pistol_4.tres" id="22_kche8"]
+[ext_resource type="Resource" uid="uid://ciuqxrem3maqc" path="res://resource/items/weapons/range/shotgun/item_shotgun_1.tres" id="23_rqkor"]
+[ext_resource type="Resource" uid="uid://chh0ic1webef5" path="res://resource/items/weapons/range/shotgun/item_shotgun_2.tres" id="24_xnsbf"]
+[ext_resource type="Resource" uid="uid://c3jefr1d8lx82" path="res://resource/items/weapons/range/shotgun/item_shotgun_3.tres" id="25_xbu4e"]
+[ext_resource type="Resource" uid="uid://cnpxdmd4qd1bs" path="res://resource/items/weapons/range/shotgun/item_shotgun_4.tres" id="26_y7i7l"]
 [ext_resource type="PackedScene" uid="uid://bfkgjpshgv7cm" path="res://scenes/ui/coin_bag/coin_bag.tscn" id="29_00wmq"]
 [ext_resource type="PackedScene" uid="uid://cq0v7vji3nrvq" path="res://scenes/ui/shop_panel/item_card/item_card.tscn" id="29_bv4pr"]
 
@@ -70,7 +70,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_3b8rw")
 script = ExtResource("1_uw7t7")
-shop_list = Array[ExtResource("2_p5o8k")]([ExtResource("3_00wmq"), ExtResource("4_bv4pr"), ExtResource("5_71wbh"), ExtResource("6_x1eg0"), ExtResource("7_52puk"), ExtResource("8_jq2ca"), ExtResource("9_prg1f"), ExtResource("10_e3siv"), ExtResource("11_q46vk"), ExtResource("12_lpl7b"), ExtResource("13_b5t3w"), ExtResource("14_hf7qu"), ExtResource("15_2i5hd"), ExtResource("16_erc4t"), ExtResource("17_6p1qk"), ExtResource("18_b7v6k"), ExtResource("19_5vqfr"), ExtResource("20_3on2n"), ExtResource("21_1i2lc"), ExtResource("22_7w8xb"), ExtResource("23_pk1f0"), ExtResource("24_kche8"), ExtResource("25_rqkor"), ExtResource("26_xnsbf")])
+shop_list = Array[ExtResource("2_bv4pr")]([ExtResource("3_71wbh"), ExtResource("4_x1eg0"), ExtResource("5_52puk"), ExtResource("6_jq2ca"), ExtResource("7_prg1f"), ExtResource("8_e3siv"), ExtResource("9_q46vk"), ExtResource("10_lpl7b"), ExtResource("11_b5t3w"), ExtResource("12_hf7qu"), ExtResource("13_2i5hd"), ExtResource("14_erc4t"), ExtResource("15_6p1qk"), ExtResource("16_b7v6k"), ExtResource("17_5vqfr"), ExtResource("18_3on2n"), ExtResource("19_1i2lc"), ExtResource("20_7w8xb"), ExtResource("21_pk1f0"), ExtResource("22_kche8"), ExtResource("23_rqkor"), ExtResource("24_xnsbf"), ExtResource("25_xbu4e"), ExtResource("26_y7i7l")])
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=707092764]
 layout_mode = 1
@@ -303,6 +303,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_sjk1b")
 text = "next wave"
 
 [node name="Combine" type="Button" parent="MarginContainer/Control/VBoxContainer" unique_id=722853322]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 90)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -311,6 +312,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_j21la")
 text = "combine"
 
 [node name="Sell" type="Button" parent="MarginContainer/Control/VBoxContainer" unique_id=1098228663]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 90)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -324,3 +326,5 @@ offset_right = -1736.9998
 offset_bottom = -904.0
 
 [connection signal="pressed" from="MarginContainer/Control/VBoxContainer/NextWave" to="." method="_on_next_wave_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Control/VBoxContainer/Combine" to="." method="_on_combine_pressed"]
+[connection signal="pressed" from="MarginContainer/Control/VBoxContainer/Sell" to="." method="_on_sell_pressed"]

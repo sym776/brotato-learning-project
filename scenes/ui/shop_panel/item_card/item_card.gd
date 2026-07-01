@@ -7,13 +7,14 @@ signal _on_item_card_selected(card: ItemCard)
 
 @onready var item_icon: TextureRect = $ItemIcon
 
-func _set_item(value: ItemBase) -> void:#设置TtemWeapon的值，目的是得到icon
+func _set_item(value: ItemBase) -> void:#设置ItemWeapon的值
 	item = value
 	item_icon.texture = value.item_icon
-	
+	print(item.item_tier)
 	var style: StyleBoxFlat = Global.get_tier_style(item.item_tier)
-
-
+	add_theme_stylebox_override("normal", style)
+	
 func _on_pressed() -> void:
-	if item.item_type == ItemBase.ItemType.WEAPON:
-		_on_item_card_selected.emit()
+	if item.item_type == ItemBase.ItemType.WEAPON: #若物品类型为武器的话
+		Global.selected_weapon = item as ItemWeapon
+		_on_item_card_selected.emit(self)

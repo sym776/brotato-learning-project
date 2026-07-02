@@ -28,8 +28,12 @@
 [ext_resource type="Resource" uid="uid://chh0ic1webef5" path="res://resource/items/weapons/range/shotgun/item_shotgun_2.tres" id="24_xnsbf"]
 [ext_resource type="Resource" uid="uid://c3jefr1d8lx82" path="res://resource/items/weapons/range/shotgun/item_shotgun_3.tres" id="25_xbu4e"]
 [ext_resource type="Resource" uid="uid://cnpxdmd4qd1bs" path="res://resource/items/weapons/range/shotgun/item_shotgun_4.tres" id="26_y7i7l"]
+[ext_resource type="Resource" uid="uid://cm776jah00lue" path="res://resource/items/passives/data/passive_cape.tres" id="27_jq2ca"]
+[ext_resource type="Resource" uid="uid://dj03crii3145b" path="res://resource/items/passives/data/passive_mighty_sword.tres" id="28_prg1f"]
 [ext_resource type="PackedScene" uid="uid://bfkgjpshgv7cm" path="res://scenes/ui/coin_bag/coin_bag.tscn" id="29_00wmq"]
 [ext_resource type="PackedScene" uid="uid://cq0v7vji3nrvq" path="res://scenes/ui/shop_panel/item_card/item_card.tscn" id="29_bv4pr"]
+[ext_resource type="Resource" uid="uid://cieyglw3smsi3" path="res://resource/items/passives/data/passive_power_ball.tres" id="29_e3siv"]
+[ext_resource type="Resource" uid="uid://bjejrjwm6eybs" path="res://resource/items/passives/data/passive_rage.tres" id="30_q46vk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b8rw"]
 bg_color = Color(0.20392157, 0.20392157, 0.20392157, 1)
@@ -70,7 +74,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_3b8rw")
 script = ExtResource("1_uw7t7")
-shop_list = Array[ExtResource("2_bv4pr")]([ExtResource("3_71wbh"), ExtResource("4_x1eg0"), ExtResource("5_52puk"), ExtResource("6_jq2ca"), ExtResource("7_prg1f"), ExtResource("8_e3siv"), ExtResource("9_q46vk"), ExtResource("10_lpl7b"), ExtResource("11_b5t3w"), ExtResource("12_hf7qu"), ExtResource("13_2i5hd"), ExtResource("14_erc4t"), ExtResource("15_6p1qk"), ExtResource("16_b7v6k"), ExtResource("17_5vqfr"), ExtResource("18_3on2n"), ExtResource("19_1i2lc"), ExtResource("20_7w8xb"), ExtResource("21_pk1f0"), ExtResource("22_kche8"), ExtResource("23_rqkor"), ExtResource("24_xnsbf"), ExtResource("25_xbu4e"), ExtResource("26_y7i7l")])
+shop_list = Array[ExtResource("2_bv4pr")]([ExtResource("3_71wbh"), ExtResource("4_x1eg0"), ExtResource("5_52puk"), ExtResource("6_jq2ca"), ExtResource("7_prg1f"), ExtResource("8_e3siv"), ExtResource("9_q46vk"), ExtResource("10_lpl7b"), ExtResource("11_b5t3w"), ExtResource("12_hf7qu"), ExtResource("13_2i5hd"), ExtResource("14_erc4t"), ExtResource("15_6p1qk"), ExtResource("16_b7v6k"), ExtResource("17_5vqfr"), ExtResource("18_3on2n"), ExtResource("19_1i2lc"), ExtResource("20_7w8xb"), ExtResource("21_pk1f0"), ExtResource("22_kche8"), ExtResource("23_rqkor"), ExtResource("24_xnsbf"), ExtResource("25_xbu4e"), ExtResource("26_y7i7l"), ExtResource("27_jq2ca"), ExtResource("28_prg1f"), ExtResource("29_e3siv"), ExtResource("30_q46vk")])
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=707092764]
 layout_mode = 1

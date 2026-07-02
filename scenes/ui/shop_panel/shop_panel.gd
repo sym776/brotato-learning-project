@@ -27,9 +27,9 @@ func load_shop(current_wave: int) -> void:#加载shop
 	#品质概率
 	var config: Dictionary = Global.SHOP_PROBILITY_CONFIG
 	#被选择item的Array
-	var selected_items: Array = Global.select_item_for_offer(shop_list, current_wave, config) 
+	var selected_items: Array = Global.select_item_for_offer(shop_list, current_wave, config)
 	for shop_item: ItemBase in selected_items:#遍历Array
-		var card_instance:= SHOP_CARD_SCENE.instantiate() as ShopCard#shop_card场景实例化 
+		var card_instance:= SHOP_CARD_SCENE.instantiate() as ShopCard#shop_card场景实例化
 		card_instance._on_item_purchased.connect(_on_item_purchased)#连接购买发生时信号
 		item_container.add_child(card_instance) #在item_container下添加ShopCard类型作为子节点
 		card_instance.shop_item = shop_item #加载shopcard
@@ -38,25 +38,30 @@ func _on_next_wave_button_pressed() -> void:
 	_on_shop_next_wave.emit()
 
 func _on_item_purchased(item: ItemBase) -> void: #当购买发生时的方法
-	var item_card : ItemCard = create_item_card() #生成物品卡 
+	var item_card : ItemCard = create_item_card() #生成物品卡
 	
 	if item.item_type == ItemBase.ItemType.WEAPON: #如果是武器类，则执行以下代码
 		weapons_container.add_child(item_card) #作为子节点加入weapon_container
 		var weapon: ItemWeapon = item as ItemWeapon #把shop_card的weapon信息赋值给weapon变量
 		Global.player.add_weapon(weapon) #添加武器
 		Global.equipped_weapons.append(weapon)
+	
+	elif item.item_type == ItemBase.ItemType.PASSIVE:
+		passives_container.add_child(item_card)
+		var passive: ItemPassive = item as ItemPassive
+		passive.apply_passive()
 		
 	item_card.item = item #赋值
 
 func create_item_card() -> ItemCard:
 	var item_card := Global.ITEM_CARD_SCENE.instantiate() as ItemCard #实例化item_card
-	item_card._on_item_card_selected.connect(_on_item_card_selected)#连接item_card被选择的信号 
+	item_card._on_item_card_selected.connect(_on_item_card_selected)#连接item_card被选择的信号
 	#并判断是否能够combine 
 	return item_card
 
 func _on_item_card_selected(card: ItemCard) -> void:#当itemcard被点击选中时
 	context_card = card #上下文card，赋值item_card信息
-	var can_merge: bool = false 
+	var can_merge: bool = false
 	if card.item.item_type == ItemBase.ItemType.WEAPON:
 		var count: int = 0
 		for weapon: ItemWeapon in Global.equipped_weapons:
@@ -66,7 +71,7 @@ func _on_item_card_selected(card: ItemCard) -> void:#当itemcard被点击选中�
 		if count >= 2:#当武器大于2时，can_merge为true
 			can_merge = true
 	
-	combine.disabled = not can_merge		
+	combine.disabled = not can_merge
 
 func _on_combine_pressed() -> void:#点击combine按钮时
 	if not context_card:
@@ -77,9 +82,9 @@ func _on_combine_pressed() -> void:#点击combine按钮时
 		return
 	
 	#从玩家当前拥有的武器列表里，找出和当前点击武器同名的武器，然后取前2个，准备移除。
-	var weapons_to_remove: Array[Weapon] = Global.player.current_weapons.filter(func(w: Weapon): 
+	var weapons_to_remove: Array[Weapon] = Global.player.current_weapons.filter(func(w: Weapon):
 		return w.data.item_name == clicked_weapon.item_name).slice(0,2)
-	var cards_to_remove: Array = weapons_container.get_children().filter(func(c: ItemCard): 
+	var cards_to_remove: Array = weapons_container.get_children().filter(func(c: ItemCard):
 		return c.item.item_name == clicked_weapon.item_name).slice(0,2)
 
 	if weapons_to_remove.size() < 2 or cards_to_remove.size() < 2:

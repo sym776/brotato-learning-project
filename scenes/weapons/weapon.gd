@@ -41,11 +41,23 @@ func setup_weapon(data: ItemWeapon) -> void:
 	var range_shape:= collision.shape.duplicate(true) as CircleShape2D
 	collision.shape = range_shape
 	collision.shape.radius = data.stats.max_range
-
+	apply_tier_outline()
 #能否使用武器
 func can_use_weapon() -> bool:
 	return cooldown_timer.is_stopped() and closest_target#若冷却时间结束及最近目标存在
 
+func apply_tier_outline() -> void:
+	print("weapon:", data.item_name, " tier:", data.item_tier)
+	
+	if data.item_tier == Global.UpgradeTier.COMMON:
+		sprite.material = null
+		return
+	
+	var outline_color: Color = Global.TIER_COLORS[data.item_tier]
+	print("outline color:", outline_color)
+	
+	sprite.material.set_shader_parameter("outline_color", outline_color)
+	
 #使用武器方法
 func use_weapon()-> void:
 	calculate_spread()#调用计算偏移方法

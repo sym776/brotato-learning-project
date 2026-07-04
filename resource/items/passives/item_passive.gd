@@ -7,14 +7,15 @@ class_name ItemPassive
 @export var remove_stats: String
 
 func get_description() -> String:
-	var description:String
+	var lines: Array[String] = []
 	
 	if add_value != 0:
-		description = "[color=green]+%s %s[/color]" % [add_value, add_stats] 
+		lines.append("[color=green]+%s %s[/color]" % [add_value, add_stats])
 	
 	if remove_value != 0:
-		description = "[color=red]-%s %s[/color]" % [remove_value, remove_stats]
-	return description
+		lines.append("[color=red]-%s %s[/color]" % [remove_value, remove_stats])
+	
+	return "\n".join(lines)
 	
 func	 apply_passive() -> void:
 	if add_value != 0:

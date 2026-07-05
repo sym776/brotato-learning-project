@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b45s460ns0ayv"]
+
+[ext_resource type="StyleBox" uid="uid://jj680qjt1gsk" path="res://styles/common_style.tres" id="1_rnf3l"]
+[ext_resource type="Texture2D" uid="uid://cproxhccob85g" path="res://assets/sprites/Players/Player_1.png" id="2_if42v"]
+[ext_resource type="Script" uid="uid://dxdc55x0tv1w2" path="res://scenes/ui/selection_panel/selection_card.gd" id="3_og1li"]
+
+[node name="SelectionCard" type="Button" unique_id=181612943]
+custom_minimum_size = Vector2(128, 128)
+theme_override_styles/normal = ExtResource("1_rnf3l")
+icon = ExtResource("2_if42v")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_og1li")

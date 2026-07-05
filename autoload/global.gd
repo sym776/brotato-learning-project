@@ -16,6 +16,7 @@ const FLASH_MATERIAL = preload("uid://bsox2vug0w1ya")
 const FLOATING_TEXT_SCENE = preload("uid://dam2weobfqirr")
 const COIN_SCENE = preload("uid://jagdd43dkppx")
 const ITEM_CARD_SCENE = preload("uid://cq0v7vji3nrvq")
+const SELECTION_CARD_SCENE = preload("uid://b45s460ns0ayv")
 
 const COMMON_STYLE = preload("uid://jj680qjt1gsk")
 const RARE_STYLE = preload("uid://j0xfyaq8pm16")
@@ -55,7 +56,8 @@ var coin: int = 500
 
 var game_paused:bool = false
 
-var selected_weapon: ItemWeapon
+var main_player_selected: UnitStats
+var main_weapon_selected: ItemWeapon
 
 var equipped_weapons: Array[ItemWeapon]
 

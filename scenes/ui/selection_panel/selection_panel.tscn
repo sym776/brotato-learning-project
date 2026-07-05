@@ -1,0 +1,237 @@
+[gd_scene format=3 uid="uid://cmu6puaimynr7"]
+
+[ext_resource type="StyleBox" uid="uid://jj680qjt1gsk" path="res://styles/common_style.tres" id="1_7k3kw"]
+[ext_resource type="Script" uid="uid://djfo6a7mvawj4" path="res://scenes/ui/selection_panel/selection_panel.gd" id="1_kpbaq"]
+[ext_resource type="Script" uid="uid://b4up7xfbnckq3" path="res://resource/units/unit_stats.gd" id="2_8vlv7"]
+[ext_resource type="Texture2D" uid="uid://cproxhccob85g" path="res://assets/sprites/Players/Player_1.png" id="2_a22ni"]
+[ext_resource type="Resource" uid="uid://cjlqcbmbpjt8u" path="res://resource/units/player/stat_player.tres" id="3_u23au"]
+[ext_resource type="PackedScene" uid="uid://dfode22cresnk" path="res://scenes/ui/custom_button/custom_button.tscn" id="3_un15a"]
+[ext_resource type="PackedScene" uid="uid://b45s460ns0ayv" path="res://scenes/ui/selection_panel/selection_card.tscn" id="4_a22ni"]
+[ext_resource type="Resource" uid="uid://dc63vb78l646p" path="res://resource/units/player/stat_player_bunny.tres" id="4_k2kjo"]
+[ext_resource type="Resource" uid="uid://2jhnq87ccbce" path="res://resource/units/player/stat_player_crazy.tres" id="5_4mw87"]
+[ext_resource type="Resource" uid="uid://gi114ims2k3e" path="res://resource/units/player/stat_player_knight.tres" id="6_hu73q"]
+[ext_resource type="Resource" uid="uid://b6bxrkwdq2tun" path="res://resource/units/player/stat_player_pirate.tres" id="7_3scu4"]
+[ext_resource type="Script" uid="uid://cxe1a38cly3m2" path="res://resource/items/weapons/item_weapon.gd" id="8_10geq"]
+[ext_resource type="Resource" uid="uid://d1p4a2kxtrkbw" path="res://resource/items/weapons/melee/axe/item_axe_1.tres" id="9_0pu13"]
+[ext_resource type="Resource" uid="uid://d3uwpo0qp78s1" path="res://resource/items/weapons/melee/punch/item_punch_1.tres" id="10_ie7rk"]
+[ext_resource type="Resource" uid="uid://crr38mnw5k8pj" path="res://resource/items/weapons/melee/sword/item_sword_1.tres" id="11_y6xu8"]
+[ext_resource type="Resource" uid="uid://6mkyu0sdbfre" path="res://resource/items/weapons/range/lazer/item_lazer_1.tres" id="12_q3p5q"]
+[ext_resource type="Resource" uid="uid://lumdtum6ldkm" path="res://resource/items/weapons/range/pistol/item_pistol_1.tres" id="13_4wjk5"]
+[ext_resource type="Resource" uid="uid://ciuqxrem3maqc" path="res://resource/items/weapons/range/shotgun/item_shotgun_1.tres" id="14_tx3iw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgmnq"]
+bg_color = Color(0.23921569, 0.23921569, 0.23921569, 1)
+
+[node name="SelectionPanel" type="Panel" unique_id=1339864576]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mgmnq")
+script = ExtResource("1_kpbaq")
+players = Array[ExtResource("2_8vlv7")]([ExtResource("3_u23au"), ExtResource("4_k2kjo"), ExtResource("5_4mw87"), ExtResource("6_hu73q"), ExtResource("7_3scu4")])
+start_weapons = Array[ExtResource("8_10geq")]([ExtResource("9_0pu13"), ExtResource("10_ie7rk"), ExtResource("11_y6xu8"), ExtResource("12_q3p5q"), ExtResource("13_4wjk5"), ExtResource("14_tx3iw")])
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1723716434]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1207315490]
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="Player" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1249215625]
+custom_minimum_size = Vector2(0, 550)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/Player" unique_id=1545348263]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -275.0
+offset_right = 190.0
+offset_bottom = 275.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_7k3kw")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Player/Panel" unique_id=849792970]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/Player/Panel/MarginContainer" unique_id=1166929831]
+layout_mode = 2
+
+[node name="PlayerIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/Player/Panel/MarginContainer/Control" unique_id=299963647]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_a22ni")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlayerName" type="Label" parent="MarginContainer/VBoxContainer/Player/Panel/MarginContainer/Control" unique_id=1503785133]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 128.0
+offset_top = 10.0
+offset_right = 292.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 24
+text = "Player name"
+
+[node name="PlayerTitle" type="Label" parent="MarginContainer/VBoxContainer/Player/Panel/MarginContainer/Control" unique_id=1375243663]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 128.0
+offset_top = 66.0
+offset_right = 292.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(1, 0.89342463, 0.42985052, 1)
+theme_override_font_sizes/font_size = 24
+text = "Player"
+
+[node name="PlayerDescription" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Player/Panel/MarginContainer/Control" unique_id=1811753568]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(332, 353)
+layout_mode = 0
+offset_top = 146.0
+offset_right = 332.0
+offset_bottom = 499.0
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Description"
+
+[node name="CustomButton" parent="MarginContainer/VBoxContainer/Player" unique_id=758673877 instance=ExtResource("3_un15a")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -260.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 68.0
+grow_horizontal = 0
+grow_vertical = 1
+theme_override_font_sizes/font_size = 46
+text = "continue"
+
+[node name="Items" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1953320173]
+custom_minimum_size = Vector2(0, 350)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Items" unique_id=53251157]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.0016413)
+theme_override_constants/separation = 24
+
+[node name="PlayerContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Items/VBoxContainer" unique_id=1191094379]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 24
+
+[node name="SelectionCard" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/PlayerContainer" unique_id=181612943 instance=ExtResource("4_a22ni")]
+layout_mode = 2
+
+[node name="SelectionCard2" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/PlayerContainer" unique_id=1864455376]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_7k3kw")
+
+[node name="SelectionCard3" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/PlayerContainer" unique_id=1801815275]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_7k3kw")
+
+[node name="SelectionCard4" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/PlayerContainer" unique_id=1911302508]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_7k3kw")
+
+[node name="SelectionCard5" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/PlayerContainer" unique_id=339159344]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_7k3kw")
+
+[node name="WeaponContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Items/VBoxContainer" unique_id=1079877114]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 24
+
+[node name="SelectionCard" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/WeaponContainer" unique_id=1542727502]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_7k3kw")
+
+[node name="SelectionCard2" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/WeaponContainer" unique_id=1408713066]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_7k3kw")
+
+[node name="SelectionCard3" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/WeaponContainer" unique_id=372376663]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_7k3kw")
+
+[node name="SelectionCard4" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/WeaponContainer" unique_id=870265598]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_7k3kw")
+
+[node name="SelectionCard5" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/WeaponContainer" unique_id=1430772658]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_7k3kw")
+
+[node name="SelectionCard6" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/WeaponContainer" unique_id=443112684]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_7k3kw")
+
+[node name="SelectionCard7" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/WeaponContainer" unique_id=1094358019]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_7k3kw")
+
+[node name="SelectionCard8" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/WeaponContainer" unique_id=10375277]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_7k3kw")
+
+[node name="SelectionCard9" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/WeaponContainer" unique_id=1464303833]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_7k3kw")

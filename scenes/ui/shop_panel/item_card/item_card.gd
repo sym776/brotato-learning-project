@@ -16,5 +16,4 @@ func _set_item(value: ItemBase) -> void:#设置ItemWeapon的值
 	
 func _on_pressed() -> void:
 	if item.item_type == ItemBase.ItemType.WEAPON: #若物品类型为武器的话
-		Global.selected_weapon = item as ItemWeapon
 		_on_item_card_selected.emit(self)

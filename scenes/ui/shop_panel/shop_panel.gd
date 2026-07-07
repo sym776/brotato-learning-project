@@ -59,6 +59,12 @@ func create_item_card() -> ItemCard:
 	#并判断是否能够combine 
 	return item_card
 
+func create_item_weapon(weapon: ItemWeapon) -> void:
+	var card:= create_item_card()
+	weapons_container.add_child(card) 
+	card.item = weapon
+	
+	
 func _on_item_card_selected(card: ItemCard) -> void:#当itemcard被点击选中时
 	context_card = card #上下文card，赋值item_card信息
 	var can_merge: bool = false

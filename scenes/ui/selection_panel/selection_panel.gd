@@ -1,6 +1,8 @@
 extends Panel
 class_name SelectionPanel
 
+signal on_selection_completed
+
 @export var players: Array[UnitStats]
 @export var start_weapons: Array[ItemWeapon]
 
@@ -18,6 +20,7 @@ func _ready() -> void:
 
 	show_player_info(false) #隐藏玩家角色选择界面
 	load_players() #加载可选择的玩家角色
+	load_weapons() #加载可选择的武器
 	
 func load_players() -> void:
 	if players.is_empty():
@@ -25,10 +28,19 @@ func load_players() -> void:
 		
 	for player: UnitStats in players:
 		var card: SelectionCard = Global.SELECTION_CARD_SCENE.instantiate()
-		card.pressed.connect(_on_player_selected.bind(player)) #bind传入当前player
+		card.pressed.connect(_on_player_selected.bind(player)) #bind传入当前player 
 		player_container.add_child(card)
 		card.set_icon(player.icon)
-		
+
+func load_weapons() -> void	:
+	if start_weapons.is_empty()	:
+		return
+	
+	for weapon: ItemWeapon in start_weapons:
+		var card: SelectionCard = Global.SELECTION_CARD_SCENE.instantiate()
+		card.pressed.connect(_on_weapon_selected.bind(weapon)) #bind传入当前player
+		weapon_container.add_child(card)
+		card.set_icon(weapon.item_icon)
 		
 func show_player_info(value: bool) -> void:
 	player_icon.visible = value
@@ -56,12 +68,14 @@ func _on_player_selected(player: UnitStats) -> void:
 	player.block_chance
 ]
 	
+func _on_weapon_selected(weapon: ItemWeapon) -> void:
+	Global.main_weapon_selected = weapon
 	
-	
-	
-	
-	
-	
-	
-	
+
+func _on_continue_button_pressed() -> void:
+	if not Global.main_player_selected and not Global.main_weapon_selected:
+		return
+		
+	on_selection_completed.emit()	
+	hide()
 	

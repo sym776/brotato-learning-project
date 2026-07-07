@@ -1,7 +1,6 @@
 extends Node2D
 class_name Arena
 
-@export var player: Player
 @export var normal_color: Color #普通颜色
 @export var blocked_color: Color #格挡颜色
 @export var critical_color: Color #暴击颜色
@@ -15,18 +14,15 @@ class_name Arena
 @onready var shop_panel: ShopPanel = %ShopPanel
 @onready var coin_bag: CoinBag = %CoinBag
 
-
 var gold_list: Array[Coins]
+
 func _ready() -> void:
-	Global.player = player #引入全局player
 	Global.on_create_block_text.connect(_on_create_block_text)#接收全局创建格挡文本信号
 	Global.on_create_damage_text.connect(_on_create_damage_text)#接收全局创建伤害文本信号
 	Global.on_upgrade_selected.connect(_on_upgrade_selected)#接收全局创建伤害文本信号
 	Global.on_create_heal_text.connect(_on_create_heal_text)#接收全局创建治疗文本信号
 	Global.on_enemy_died.connect(_on_enemy_died)#接收死亡掉落金币
 	
-	spawner.start_wave()
-	shop_panel.load_shop(9)
 	
 func _process(delta: float) -> void:
 	if Global.game_paused: return #如果游戏暂停，则循环暂停
@@ -104,3 +100,14 @@ func _on_shop_panel__on_shop_next_wave() -> void:
 
 func _on_enemy_died(enemy: Enemy) -> void:
 	spawn_coin(enemy)
+
+func _on_selection_panel_on_selection_completed() -> void:
+	var player: Player = Global.get_selected_player()
+	add_child(player)
+	player.add_weapon(Global.main_weapon_selected)
+	shop_panel.create_item_weapon(Global.main_weapon_selected)
+	Global.equipped_weapons.append(Global.main_weapon_selected)
+	spawner.start_wave()
+	Global.game_paused = false
+	
+	

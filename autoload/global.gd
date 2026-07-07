@@ -49,6 +49,13 @@ const TIER_COLORS: Dictionary[UpgradeTier, Color] = {
 	UpgradeTier.LEGENDARY: Color(0.906,0.212,0.212)
 }
 
+var available_players: Dictionary[String, PackedScene] = {
+	"Joe": preload("uid://bffr0m6eep45f"),
+	"Crazy": preload("uid://7uf6uu6g6wjr"),
+	"Bunny": preload("uid://rraowbswlmvg"),
+	"Knight": preload("uid://bgb6l3jj3hiah"),
+	"Pirate": preload("uid://26kx4rgj1iu3")
+}
 
 var player:Player
 
@@ -70,6 +77,12 @@ func get_chance_success(chance: float) -> bool:
 	if chance > random:
 		return true
 	return false
+
+func get_selected_player() -> Player:
+	var player_scene:= available_players[main_player_selected.name]
+	var player_instance:= player_scene.instantiate()
+	player = player_instance
+	return player
 
 func get_tier_style(tier: UpgradeTier) -> StyleBoxFlat:
 	match tier:

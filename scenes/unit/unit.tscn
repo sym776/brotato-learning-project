@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d3y73mf1rafyq"]
 
-[ext_resource type="Script" uid="uid://cv6rknrmlpopg" path="res://scripts/unit.gd" id="1_1jvru"]
+[ext_resource type="Script" uid="uid://cv6rknrmlpopg" path="res://scenes/unit/unit.gd" id="1_1jvru"]
 [ext_resource type="Texture2D" uid="uid://devt2xbk78rej" path="res://assets/sprites/shadow.png" id="1_k673f"]
 [ext_resource type="PackedScene" uid="uid://b5obb86cm8yvp" path="res://scenes/unit/component/hurtbox_component.tscn" id="3_vh40f"]
 [ext_resource type="PackedScene" uid="uid://cc6st12snsnaj" path="res://scenes/unit/component/health_component.tscn" id="4_bhlit"]

@@ -3,14 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://cy4xfx762bxgb" path="res://assets/sprites/BG.png" id="1_8trdl"]
 [ext_resource type="Script" uid="uid://drih8ccvk0sdi" path="res://scenes/arena/arena.gd" id="1_asdgj"]
 [ext_resource type="Texture2D" uid="uid://ov4fmsbglo55" path="res://assets/sprites/Map.png" id="2_5tue2"]
-[ext_resource type="PackedScene" uid="uid://bmrgfs2j8nl7j" path="res://scenes/unit/players/player.tscn" id="3_5tue2"]
-[ext_resource type="Script" uid="uid://dyhtgq3p6qrvi" path="res://scripts/camera_2d.gd" id="5_jx0ua"]
+[ext_resource type="Script" uid="uid://dyhtgq3p6qrvi" path="res://scenes/unit/players/camera_2d.gd" id="5_jx0ua"]
 [ext_resource type="Script" uid="uid://cijsxcrk3hqpd" path="res://scenes/arena/spawner.gd" id="7_u52cf"]
 [ext_resource type="Script" uid="uid://da7ykrayed8hj" path="res://resource/waves/wave_data.gd" id="8_6w4xk"]
 [ext_resource type="Resource" uid="uid://3wbugxecychk" path="res://resource/waves/wave_1_to_5.tres" id="9_2ml6w"]
 [ext_resource type="PackedScene" uid="uid://bb2dquue2id4e" path="res://scenes/ui/upgrade_panel/upgrade_panel.tscn" id="9_6w4xk"]
 [ext_resource type="PackedScene" uid="uid://dftikpscnrc1w" path="res://scenes/ui/shop_panel/shop_panel.tscn" id="10_2ml6w"]
 [ext_resource type="PackedScene" uid="uid://bfkgjpshgv7cm" path="res://scenes/ui/coin_bag/coin_bag.tscn" id="11_xgbxb"]
+[ext_resource type="PackedScene" uid="uid://cmu6puaimynr7" path="res://scenes/ui/selection_panel/selection_panel.tscn" id="12_vmsrg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2ml6w"]
 font_size = 64
@@ -18,9 +18,8 @@ font_size = 64
 [sub_resource type="LabelSettings" id="LabelSettings_6w4xk"]
 font_size = 64
 
-[node name="Arena" type="Node2D" unique_id=2070620410 node_paths=PackedStringArray("player")]
+[node name="Arena" type="Node2D" unique_id=2070620410]
 script = ExtResource("1_asdgj")
-player = NodePath("Members/Player")
 normal_color = Color(1, 1, 1, 1)
 blocked_color = Color(0.99543077, 0.10492751, 0.36096114, 1)
 critical_color = Color(1, 0.7884327, 0, 1)
@@ -37,14 +36,8 @@ z_index = -1
 scale = Vector2(2, 2)
 texture = ExtResource("2_5tue2")
 
-[node name="Members" type="Node2D" parent="." unique_id=515185085]
-y_sort_enabled = true
+[node name="Camera2D" type="Camera2D" parent="." unique_id=656783818]
 position = Vector2(-6, 14)
-
-[node name="Player" parent="Members" unique_id=1774284862 instance=ExtResource("3_5tue2")]
-y_sort_enabled = true
-
-[node name="Camera2D" type="Camera2D" parent="Members" unique_id=656783818]
 script = ExtResource("5_jx0ua")
 
 [node name="Spawner" type="Node2D" parent="." unique_id=1148893567]
@@ -102,7 +95,10 @@ visible = false
 unique_name_in_owner = true
 visible = false
 
+[node name="SelectionPanel" parent="GameUI" unique_id=1339864576 instance=ExtResource("12_vmsrg")]
+
 [connection signal="on_wave_completed" from="Spawner" to="." method="_on_spawner_on_wave_completed"]
 [connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Spawner/WaveTimer" to="Spawner" method="_on_wave_timer_timeout"]
 [connection signal="_on_shop_next_wave" from="GameUI/ShopPanel" to="." method="_on_shop_panel__on_shop_next_wave"]
+[connection signal="on_selection_completed" from="GameUI/SelectionPanel" to="." method="_on_selection_panel_on_selection_completed"]

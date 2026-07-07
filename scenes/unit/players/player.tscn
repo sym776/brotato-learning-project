@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://cq4y0iplhlc8b" path="res://resource/units/player/player.gd" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://cproxhccob85g" path="res://assets/sprites/Players/Player_1.png" id="3_dqkch"]
 [ext_resource type="Resource" uid="uid://cjlqcbmbpjt8u" path="res://resource/units/player/stat_player.tres" id="3_qlg0r"]
-[ext_resource type="Script" uid="uid://1qk2e2shm4o0" path="res://scripts/trail.gd" id="4_qlg0r"]
-[ext_resource type="Script" uid="uid://c8g8274mb73pc" path="res://scripts/weapon_container.gd" id="6_bjr3c"]
+[ext_resource type="Script" uid="uid://1qk2e2shm4o0" path="res://scenes/unit/players/trail.gd" id="4_qlg0r"]
+[ext_resource type="Script" uid="uid://c8g8274mb73pc" path="res://scenes/ui/shop_panel/item_card/weapon_container.gd" id="6_bjr3c"]
 
 [sub_resource type="Curve" id="Curve_qlg0r"]
 _data = [Vector2(0, 0.02768588), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.2982101, 0.0, 0, 0]

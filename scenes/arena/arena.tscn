@@ -42,7 +42,9 @@ script = ExtResource("5_jx0ua")
 
 [node name="Spawner" type="Node2D" parent="." unique_id=1148893567]
 script = ExtResource("7_u52cf")
+spawn_area_size = null
 wave_data = Array[ExtResource("8_6w4xk")]([ExtResource("9_2ml6w")])
+enemy_collection = null
 
 [node name="SpawnTimer" type="Timer" parent="Spawner" unique_id=1855746835]
 one_shot = true

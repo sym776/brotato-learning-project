@@ -17,6 +17,8 @@ const FLOATING_TEXT_SCENE = preload("uid://dam2weobfqirr")
 const COIN_SCENE = preload("uid://jagdd43dkppx")
 const ITEM_CARD_SCENE = preload("uid://cq0v7vji3nrvq")
 const SELECTION_CARD_SCENE = preload("uid://b45s460ns0ayv")
+const SPAWN_EFFECT_SCENE = preload("uid://crk3m85x0xl6r")
+
 
 const COMMON_STYLE = preload("uid://jj680qjt1gsk")
 const RARE_STYLE = preload("uid://j0xfyaq8pm16")

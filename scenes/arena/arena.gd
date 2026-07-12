@@ -52,7 +52,7 @@ func start_new_wave() -> void:
 	spawner.wave_index += 1
 	spawner.start_wave()
 
-func clean_coin() -> void:
+func clean_arena() -> void:
 	if gold_list.size() > 0:
 		var target_coin_pos: Vector2 = coin_bag.size / 2.0 + coin_bag.global_position
 		for gold in gold_list:
@@ -61,6 +61,7 @@ func clean_coin() -> void:
 				gold_item.set_collection_target(target_coin_pos)
 	
 	gold_list.clear()
+	spawner.clear_enemies()
 
 func spawn_coin(enemy:Enemy) -> void:
 	var random_angle: float = randf_range(0, TAU)
@@ -90,7 +91,7 @@ func _on_upgrade_selected() -> void:
 
 func _on_spawner_on_wave_completed() -> void:
 	if not Global.player:return
-	clean_coin()
+	clean_arena()
 	await get_tree().create_timer(2.0).timeout
 	show_upgrades() 
 

@@ -11,3 +11,6 @@ icon = ExtResource("2_if42v")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("3_og1li")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

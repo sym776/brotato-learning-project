@@ -7,7 +7,7 @@ class_name UpgradeCard
 @onready var item_name: Label = %Name
 @onready var item_description: Label = %Description
 
-func _set_data(value: ItemUpgrade) -> void:
+func _set_data(value: ItemUpgrade) -> void: 
 	item_data = value
 	item_icon.texture = item_data.item_icon
 	item_name.text = item_data.item_name
@@ -19,4 +19,5 @@ func _set_data(value: ItemUpgrade) -> void:
 func _on_custom_button_pressed() -> void:
 	if item_data and is_instance_valid(Global.player):
 		item_data.applying_upgrade()
+		SoundManager.play_sound(SoundManager.Sound.UI)
 		Global.on_upgrade_selected.emit()

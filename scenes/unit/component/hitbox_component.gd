@@ -28,4 +28,6 @@ func setup(damage: float,critical:bool,knockback:float,source:Node2D)->void:
 #当hurtbox进入检测范围时，广播该hurtbox
 func _on_area_entered(area: Area2D) -> void:
 	if area is HurtboxComponent:
+		SoundManager.play_sound(SoundManager.Sound.ENEMY_HIT)
 		on_hit_hurtbox.emit(area)
+		

@@ -8,6 +8,7 @@ func execute_attack() -> void:
 	weapon.is_attacking = true
 	
 	create_projectile()
+	SoundManager.play_sound(SoundManager.Sound.FIRE)
 	
 	var tween: Tween = create_tween()
 	var recoil_position:Vector2 = Vector2(weapon.atk_start_pos.x - weapon.data.stats.recoil, weapon.atk_start_pos.y)

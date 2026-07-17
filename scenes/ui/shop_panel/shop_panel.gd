@@ -35,9 +35,11 @@ func load_shop(current_wave: int) -> void:#加载shop
 		card_instance.shop_item = shop_item #加载shopcard
 
 func _on_next_wave_button_pressed() -> void:
+	SoundManager.play_sound(SoundManager.Sound.UI)
 	_on_shop_next_wave.emit()
 
 func _on_item_purchased(item: ItemBase) -> void: #当购买发生时的方法
+
 	var item_card : ItemCard = create_item_card() #生成物品卡
 	
 	if item.item_type == ItemBase.ItemType.WEAPON: #如果是武器类，则执行以下代码
@@ -80,6 +82,8 @@ func _on_item_card_selected(card: ItemCard) -> void:#当itemcard被点击选中�
 	combine.disabled = not can_merge
 
 func _on_combine_pressed() -> void:#点击combine按钮时
+	SoundManager.play_sound(SoundManager.Sound.UI)	
+	
 	if not context_card:
 		return
 		
@@ -119,6 +123,8 @@ func _on_combine_pressed() -> void:#点击combine按钮时
 	context_card = null
 
 func _on_sell_pressed() -> void:
+	SoundManager.play_sound(SoundManager.Sound.UI)	
+	
 	if not context_card:
 		return
 	

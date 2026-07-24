@@ -102,7 +102,7 @@ visible = false
 
 [node name="BGMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1669596589]
 stream = ExtResource("12_s83md")
-volume_db = -30.0
+volume_db = -20.0
 autoplay = true
 
 [connection signal="on_wave_completed" from="Spawner" to="." method="_on_spawner_on_wave_completed"]
